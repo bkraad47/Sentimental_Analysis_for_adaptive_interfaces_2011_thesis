@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "_//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1_strict.dtd">
+<!-- saved from url=(0060)http://hype.la/ads/20db4a36-a68e-4d88-a4ff-0cdbc6216326.html -->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+        <title>Hype.la: Jacob Perkins's Shared Ads</title>
+        <link rel="stylesheet" href="http://hype.la/reset.css">
+        <link rel="stylesheet" href="http://hype.la/text.css">
+        <link rel="stylesheet" href="http://hype.la/advert.css">
+        <script src="right.js" type="text/javascript"></script>
+        <script src="ads.js" type="text/javascript"></script>
+    </head>
+    <body>
+        <div id="powered_by">
+            <span>Ads powered by <a href="http://hype.la/" target="_top">Hype.la</a>.</span>
+        </div>
+
+        <div id="adblock">
+                        <div class="advert big_curvy" id="advert-1" style="display: block; ">             <ul>                 <li><a href="http://learnpythonthehardway.org/" target="_top">Learn Python The Hard Way</a></li>                 <li><em>"The Hard Way Is Easier."</em></li>                                      <li><span>A Book                                   by Zed A. Shaw</span></li>             </ul>         </div>
+                        <div class="advert big_curvy" id="advert-2" style="display: block; ">             <ul>                 <li><a href="http://oppugn.us/" target="_top">Oppugn.US</a></li>                 <li><em>"Everyone's gotta rant."</em></li>                                      <li><span>A Blog                                   by Zed A. Shaw</span></li>             </ul>         </div>
+                        <div class="advert big_curvy" id="advert-3" style="display: block; ">             <ul>                 <li><a href="http://ericharrison.info/" target="_top">Eric Harrison</a></li>                 <li><em>"Floating point exception"</em></li>                                      <li><span>A guy writing about programming                                   by Eric Ryan Harrison</span></li>             </ul>         </div>
+                        <div class="advert big_curvy" id="advert-4" style="display: block; ">             <ul>                 <li><a href="http://blog.darkhax.com/" target="_top">Verbose Logging</a></li>                 <li><em>"software development with some really amazing hair"</em></li>                                      <li><span>A Blog                                   by Daniel Huckstep</span></li>             </ul>         </div>
+                        <div class="advert big_curvy" id="advert-5" style="display: none">
+            </div>
+                    </div>
+
+        <script type="text/html" id="ad_tmpl">
+            <ul>
+                <li><a href="<%= advert.link.stripTags() %>" target="_top"><%= advert.title.stripTags() %></a></li>
+                <li><em>"<%= advert.tagline.stripTags() %>"</em></li>
+                <% if(advert.ad_type.match(/^[AEIOUaeiou]/)) { %>
+                    <li><span>An <%= advert.ad_type.stripTags() %>
+                <% } else { %>
+                    <li><span>A <%= advert.ad_type.stripTags() %>
+                <% } %>
+                 by <%= advert.full_name.stripTags() %></span></li>
+            </ul>
+        </script>
+
+        <script type="text/javascript">
+            var ads = load_adverts('20db4a36-a68e-4d88-a4ff-0cdbc6216326', ads);
+            start_periodic(ads);
+        </script>
+    
+
+
+</body></html>

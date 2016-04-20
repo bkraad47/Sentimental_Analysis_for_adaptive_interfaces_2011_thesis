@@ -1,0 +1,311 @@
+* {
+margin: 0px;
+padding: 0px;
+}
+
+body {
+padding: 0px;
+margin: 0px;
+color: #444;
+font-size: 76%;
+font-family: Verdana, 'Lucida Grande', Arial, Sans-Serif;
+line-height: 1.4em;
+letter-spacing: .35pt;
+text-align: center;
+background: #999 url("../images/structure/bg.gif") repeat 0 0;
+}
+
+#wrapper {
+background: #fff;
+border-left:6px solid #fff;
+border-right:6px solid #fff;
+border-top:10px solid #fff;
+border-bottom:10px solid #fff;
+}
+
+
+/*- Global stylings --------------------------- */ 
+
+p {
+margin: 0 0 14px 0;
+}
+
+a, a:link {
+text-decoration: none;
+color: #FF0000;
+}
+
+a:active, a:hover {
+color: #333;
+text-decoration: none;
+}
+
+h1, h2, h3, h4  {
+font-family: 'Lucida Grande', Verdana, Arial, Sans-Serif;
+margin: 0px 0 10px 0;
+padding: 0;
+}
+
+h1 {
+color: #666;
+font-size: 1.8em;
+line-height:1.1em;
+font-weight: normal;
+padding-bottom:7px;
+}
+
+h2 {
+font-size: 1.4em;
+font-weight: normal;
+border-bottom: 1px dotted #ccc;
+border-top: 1px dotted #ccc;
+padding:5px 0px 7px 4px;
+margin:15px 0px;
+color: #666;
+}
+
+h3 {
+font-size: 1.3em;
+color: #336699;
+padding:9px 0px 3px 0px;
+font-weight: bold;
+text-transform:uppercase;
+}
+
+h4 {
+color: #666;
+font-size: 1.1em;
+font-weight: bold;
+margin: 7px 0 9px 0;
+padding: 0;
+}
+
+ul, ol {
+list-style: url(../images/structure/bullet03.png);
+margin: 0 30px;
+padding-top:5px;
+}
+
+ul ul, ol ol {
+list-style: url(../images/structure/bullet04.png);
+margin: 8px 30px 0px 30px;
+}
+
+li {
+margin-bottom: 14px;
+}
+
+img {
+border: 0;
+}
+
+blockquote {
+margin: 15px 20px;
+padding-left: 15px;
+border-left: 1px solid #E1E1E1;
+font-size: 0.9em;
+color: #757373;
+}
+
+table {
+border: 1px solid #ccc;
+margin: 15px 40px 15px 40px;
+padding: 0;
+border-collapse: collapse;
+}
+
+td, th, tr {
+border: 1px dashed #ccc;
+margin: 0;
+padding: 7px;
+vertical-align: top;
+}
+
+th {
+background: #FBF2E2;
+color: #777;
+}
+/* ------------------------------------------------------------
+header 
+------------------------------------------------------------ */
+#header {
+background: #fff url("../images/structure/headers/rotate.php") no-repeat 0 0;
+height:9.1em; /*This CSS controls the height of the header and the user1 box. Adjust the height in ems to fit your logo image*/
+}
+
+/*CSS for logo. Its a image replaced link as an H1 tag*/
+#header h1 {
+background:url(../images/structure/cyberEmotions-logo.gif) 0 0 no-repeat;
+}
+
+/*Set the line-height and width equal to your logo image here*/
+#header h1 a {
+width:220px;
+line-height:80px;
+}
+
+
+#header h1 {
+position: relative;
+top: 22px; /* logo placement */
+left: 15px;
+margin: 0;
+padding: 0;
+}
+
+#header h1 a {
+display:block;
+text-indent:-5000px;
+text-decoration:none;
+}
+
+/* ------------------------------------------------------ */
+
+#contentwrapper {
+min-height:400px;
+background:url(../images/structure/bg_fade.png) 0 0 repeat-y;
+text-align:left;
+padding-bottom: 10px;
+}
+#contentcolumn {
+font-size: 1.1em;
+line-height:1.3em;
+}
+#contentcolumn img, #contentcolumn2 img, #rightcolumn img {
+padding:3px;
+background: #fff;
+border: 1px solid #eee;
+}
+.liney {
+background:url(../images/structure/header_dots.gif) 0 0 no-repeat;
+height: 10px;
+margin: 0px auto;
+}
+.liney2 {
+background:url(../images/structure/dotties.gif) 0 0 no-repeat;
+height: 6px;
+margin: 0px auto;
+}
+
+.newsitem {
+padding: 5px 0px 2px 20px;
+border-left:1px solid #E1E1E1;
+font-size: 0.9em;
+text-align: left;
+min-height:200px;
+}
+
+.newsitem p {
+color:#666;
+border-bottom: 1px dotted #eee;
+padding: 0px 0px 17px 0px;
+}
+
+.newsitem h3 {
+border-bottom: 1px solid #E1E1E1;
+padding: 0px 0px 4px 0px;
+}
+
+.newsitem h4 {
+color:#666;
+padding: 3px 0px 0px 0px;
+}
+
+/*- Menu --------------------------- */ 
+
+#navcontainer { 
+margin: 35px 0px 0px 0px;
+background: url("../images/structure/nav_lineDrk.png") no-repeat 0 0;
+}
+.navline { 
+background: url("../images/structure/nav_lineDrk.png") no-repeat 100% 0;
+height:1px!important;
+height:1%;
+padding: 0px;
+margin: 0px;
+}
+#navcontainer ul {
+margin: 0px;
+padding: 0px;
+list-style: none;
+font-size: .9em;
+}
+#navlist li { 
+margin: 0px;
+list-style: none;
+height:31px;
+background: url("../images/structure/nav_unrolly.jpg") no-repeat 0 0;
+}
+
+#navlist a
+{
+display: block;
+padding: 8px 2px 0px 20px;
+width: 156px;
+}
+
+#navlist a:link, #navlist a:visited {
+color: #FF0000;
+text-decoration: none;
+height:31px!important;
+height:1%;
+}
+
+#navlist a:hover {
+background: url("../images/structure/nav_rolly.jpg") no-repeat 0 0;
+color: #333;
+}
+
+body#home #home_tab a, body#about #about_tab a, body#partners #partners_tab a, body#publications #publications_tab a, body#data #data_tab a, body#internal #internal_tab a, body#links #links_tab a, body#people #people_tab a {
+background: url("../images/structure/nav_rolly.jpg") no-repeat 0 0;
+height:31px;
+color: #333;
+}
+
+/*- Menu ends --------------------------- */ 
+
+
+#botLogos {
+margin: 0px auto;
+padding: 14px 0px 0px 0px!important;
+padding: 0px;
+width:698px;
+text-align: center;
+clear: both;
+}
+
+.logos1 {
+margin-top: 7px;
+}
+.logos2 {
+margin-bottom: 15px;
+}
+#footer {
+margin: 0px;
+padding: 0px;
+text-align: center;
+height:50px;
+background: #00388C url("../images/structure/footer_blue.gif") no-repeat 0 0;
+}
+.footDenty {
+padding: 13px 0px 0px 0px;
+font-size: .8em;
+color: #CCC;
+}
+
+.tree {
+margin:60px 0px 10px 30px;
+}
+.alignRight {
+float:right;
+margin-left:10px;
+}
+.alignCenter {
+width: 520px;
+margin:0px auto;
+text-align:center;
+}
+.alignLeft {
+float:left;
+margin-right: 10px 10px 10px 0px;
+}

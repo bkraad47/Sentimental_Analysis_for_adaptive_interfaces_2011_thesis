@@ -1,0 +1,1363 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<!-- saved from url=(0109)http://stackoverflow.com/questions/933212/is-it-possible-to-guess-a-users-mood-based-on-the-structure-of-text -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><script type="text/javascript" async="" src="./algorithm - Is it possible to guess a user's mood based on the structure of text  - Stack Overflow_files/ga.js"></script>
+    
+    <title>algorithm - Is it possible to guess a user's mood based on the structure of text? - Stack Overflow</title>
+    <link rel="shortcut icon" href="http://cdn.sstatic.net/stackoverflow/img/favicon.ico">
+    <link rel="apple-touch-icon" href="http://cdn.sstatic.net/stackoverflow/img/apple-touch-icon.png">
+    <link rel="search" type="application/opensearchdescription+xml" title="Stack Overflow" href="http://stackoverflow.com/opensearch.xml">
+    <script type="text/javascript" async="" src="./algorithm - Is it possible to guess a user's mood based on the structure of text  - Stack Overflow_files/adzerk1_2_4_43,adzerk2_2_17_45,adzerk3_2_4_44"></script><script type="text/javascript" src="./algorithm - Is it possible to guess a user's mood based on the structure of text  - Stack Overflow_files/jquery.min.js"></script>
+    <script type="text/javascript" src="./algorithm - Is it possible to guess a user's mood based on the structure of text  - Stack Overflow_files/stub.js"></script>
+    <link rel="stylesheet" type="text/css" href="./algorithm - Is it possible to guess a user's mood based on the structure of text  - Stack Overflow_files/all.css">
+    
+    <link rel="canonical" href="./algorithm - Is it possible to guess a user's mood based on the structure of text  - Stack Overflow_files/algorithm - Is it possible to guess a user's mood based on the structure of text  - Stack Overflow.htm">
+    <link rel="alternate" type="application/atom+xml" title="Feed for question &#39;Is it possible to guess a user&#39;s mood based on the structure of text?&#39;" href="http://stackoverflow.com/feeds/question/933212">
+    <meta name="title" content="algorithm - Is it possible to guess a user&amp;#39;s mood based on the structure of text? - Stack Overflow">
+    <link rel="image_src" href="http://sstatic.net/stackoverflow/img/apple-touch-icon.png">
+    <script type="text/javascript">
+        
+        StackExchange.ready(function () {
+
+            StackExchange.question.init({showAnswerHelp:true,totalCommentCount:13,shownCommentCount:5,highlightColor:'#F4A83D',backgroundColor:'#FFF',questionId:933212});
+
+            styleCode();
+        });
+    </script>
+
+
+    <script type="text/javascript">
+        StackExchange.init({"stackAuthUrl":"http://stackauth.com","serverTime":1323785959,"styleCode":true,"newTagEditor":true,"enableUserHovercards":true,"enableTabCompletion":true,"site":{"name":"Stack Overflow","description":"Q&A for professional and enthusiast programmers"},"user":{"isAnonymous":true,"fkey":"11d7a768b8da8f89b8f6b7af3f132045","inboxUnviewedCount":-1}});
+        StackExchange.using.setCacheBreakers({"js/prettify-full.js":"c8f8e85755d7","js/moderator.js":"ec55efe8087c","js/full-anon.js":"891f61873e53","js/full.js":"fe1e158e487f","js/wmd.js":"5a53fab5f2c1","js/third-party/jquery.autocomplete.min.js":"e5f01e97f7c3","js/mobile.js":"97644ef9b7d4","js/help.js":"7f83495f785a","js/tageditor.js":"75954ba7b6f1","js/tageditornew.js":"9d9998359a54","js/inline-tag-editing.js":"364e12111b4b","js/mathjax-editing.js":"a47e02eb0282","js/revisions.js":"63c88065da1f"});
+    </script>
+
+<script async="" type="text/javascript" src="./algorithm - Is it possible to guess a user's mood based on the structure of text  - Stack Overflow_files/full-anon.js"></script><link href="./algorithm - Is it possible to guess a user's mood based on the structure of text  - Stack Overflow_files/sidebar.min.css" type="text/css" rel="stylesheet"></head>
+<body class="question-page" style="margin-top: 2.5em; ">
+    <noscript>&lt;div id="noscript-padding"&gt;&lt;/div&gt;</noscript>
+    <div id="notify-container"><div id="notify--1" style=""><span class="notify-close"><a title="dismiss this notification">×</a></span><span class="notify-text">Welcome to Q&amp;A for professional and enthusiast programmers — check out the <a onclick="StackExchange.notify.closeFirstTime(); return false;" href="http://stackoverflow.com/faq">FAQ</a>!</span></div></div>
+    <div id="overlay-header"></div>
+    <div id="custom-header"></div>
+
+    <div class="container">
+        <div id="header">
+            <div id="portalLink">
+                <a class="genu" onclick="StackExchange.ready(function(){genuwine.click();});return false;">Stack Exchange</a>
+            </div>
+            <div id="topbar">
+                <div id="hlinks">
+                    <span id="hlinks-user">
+                  
+                  </span>
+                  <span id="hlinks-nav">
+                  <a href="http://stackoverflow.com/users/login?returnurl=%2fquestions%2f933212%2fis-it-possible-to-guess-a-users-mood-based-on-the-structure-of-text">log in</a>
+ <span class="lsep">|</span>
+<a href="http://careers.stackoverflow.com/">careers</a>
+ <span class="lsep">|</span>
+
+                  </span>
+                  <span id="hlinks-custom">
+                  <a href="http://chat.stackoverflow.com/">chat</a>
+ <span class="lsep">|</span>
+<a href="http://meta.stackoverflow.com/">meta</a>
+ <span class="lsep">|</span>
+<a href="http://stackoverflow.com/about">about</a>
+ <span class="lsep">|</span>
+<a href="http://stackoverflow.com/faq">faq</a>
+                  </span>
+                </div>
+                <div id="hsearch">
+                    <form id="search" action="http://stackoverflow.com/search" method="get" autocomplete="off">
+                    <div>
+                        <input autocomplete="off" name="q" class="textbox" placeholder="search" tabindex="1" type="text" maxlength="140" size="28" value="">
+                    </div>
+                    </form>
+                </div>
+            </div>
+            <br class="cbt">
+            <div id="hlogo">
+                <a href="http://stackoverflow.com/">Stack Overflow</a>
+            </div>
+            <div id="hmenus">
+                <div class="nav mainnavs">
+                    <ul>
+                        <li class="youarehere"><a id="nav-questions" href="http://stackoverflow.com/questions">Questions</a></li>
+                        <li><a id="nav-tags" href="http://stackoverflow.com/tags">Tags</a></li>
+                        <li><a id="nav-users" href="http://stackoverflow.com/users">Users</a></li>
+                        <li><a id="nav-badges" href="http://stackoverflow.com/badges">Badges</a></li>
+                        <li><a id="nav-unanswered" href="http://stackoverflow.com/unanswered">Unanswered</a></li>
+                    </ul>
+                </div>
+                <div class="nav askquestion">
+                    <ul>
+                        <li>
+                            <a id="nav-askquestion" href="http://stackoverflow.com/questions/ask">Ask Question</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        
+
+
+        <div id="content">
+            
+
+
+
+<div id="question-header">
+    <h1><a href="./algorithm - Is it possible to guess a user's mood based on the structure of text  - Stack Overflow_files/algorithm - Is it possible to guess a user's mood based on the structure of text  - Stack Overflow.htm" class="question-hyperlink">Is it possible to guess a user's mood based on the structure of text?</a></h1>
+</div>
+<div id="mainbar">
+
+
+<div class="question" id="question">
+
+    <div class="everyonelovesstackoverflow" id="adzerk1"><a href="http://engine.adzerk.net/redirect/0/5921/2444/8277/f7d6251c9b404fe7bd7e9899e0b2eb55/43/1178/8807/634593827503638950?keywords=algorithm%2cnlp" rel="nofollow" target="_blank" title=""><img src="./algorithm - Is it possible to guess a user's mood based on the structure of text  - Stack Overflow_files/9241eb4107b24c588c0ca0042534c03e.png" title="" alt="" border="0" height="90" width="728"></a></div>
+
+    
+    <table>
+    <tbody><tr>
+    <td class="votecell">
+        
+<div class="vote">
+    <input type="hidden" value="933212">
+    <a class="vote-up-off" title="This question shows research effort; it is useful and clear (click again to undo)">up vote</a>
+    <span class="vote-count-post">22</span>
+    <a class="vote-down-off" title="This question does not show any research effort; it is unclear or not useful (click again to undo)">down vote</a>
+
+    <a class="star-off" href="http://stackoverflow.com/questions/933212/is-it-possible-to-guess-a-users-mood-based-on-the-structure-of-text#" title="This is a favorite question (click again to undo)">favorite</a>
+    <div class="favoritecount"><b>23</b></div>    
+
+    <script type="text/javascript">
+        StackExchange.ready(function() {
+            var shareUrl = "http%3a%2f%2fstackoverflow.com%2fq%2f933212";
+            var shareMsg = "Is+it+possible+to+guess+a+user%27s+mood+based+on+the+structure+of+text%3f";
+            StackExchange.share.facebook($("#fb-share-933212"), shareUrl, shareMsg);
+            StackExchange.share.twitter($("#twitter-share-933212"), shareUrl, shareMsg);
+        });
+    </script>
+    <a id="fb-share-933212" class="fb-share" title="share link to this question on Facebook">share [fb]</a>
+    <a id="twitter-share-933212" class="twitter-share" title="share link to this question on Twitter">share [tw]</a>    
+
+</div>
+
+    </td>
+<td class="postcell">
+<div>          
+    <div class="post-text">
+        <p>I assume a natural language processor would need to be used to parse the text itself, but what suggestions do you have for an algorithm to detect a user's mood based on text that they have written? I doubt it would be very accurate, but I'm still interested nonetheless.</p>
+
+<p>EDIT: I am by no means an expert on linguistics or natural language processing, so I apologize if this question is too general or stupid.</p>
+
+    </div>            
+    <div class="post-taglist">
+        <a href="http://stackoverflow.com/questions/tagged/algorithm" class="post-tag" title="show questions tagged &#39;algorithm&#39;" rel="tag">algorithm</a> <a href="http://stackoverflow.com/questions/tagged/nlp" class="post-tag" title="show questions tagged &#39;nlp&#39;" rel="tag">nlp</a> 
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+        <div class="post-menu"><a href="http://stackoverflow.com/q/933212" title="short permalink to this question" id="link-post-933212">link</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/933212/edit">improve this question</a></div>
+    </td>
+    <td align="right" class="post-signature">
+<div class="user-info"><div class="user-action-time">edited <a href="http://stackoverflow.com/posts/933212/revisions" title="show all edits to this post"><span title="2009-06-01 01:23:17Z" class="relativetime">Jun 1 '09 at 1:23</span></a></div><div class="user-gravatar32"></div><div class="user-details"><br></div></div>    </td>
+    <td class="post-signature owner">
+    <div class="user-info user-hover"><div class="user-action-time">asked <span title="2009-06-01 00:43:30Z" class="relativetime">Jun 1 '09 at 0:43</span></div><div class="user-gravatar32"><a href="http://stackoverflow.com/users/31516/david-brown"><div class=""><img src="./algorithm - Is it possible to guess a user's mood based on the structure of text  - Stack Overflow_files/b33ebc3cbf45b6c5c34433da8c404655" alt=""></div></a></div><div class="user-details"><a href="http://stackoverflow.com/users/31516/david-brown">David Brown</a><br><span class="reputation-score" title="reputation score">6,413</span><span title="2 gold badges"><span class="badge1"></span><span class="badgecount">2</span></span><span title="20 silver badges"><span class="badge2"></span><span class="badgecount">20</span></span><span title="50 bronze badges"><span class="badge3"></span><span class="badgecount">50</span></span></div></div>
+        <br class="cbt">
+        <div class="accept-rate accept-answer-link" title="this user has accepted an answer for 96 of 103 eligible questions">93% accept rate</div>
+    </td>
+    </tr>
+    </tbody></table>
+</div>
+</td>    </tr>
+
+
+<tr>
+<td class="votecell"></td>
+<td>
+    <div id="comments-933212" class="comments">
+        <table>
+        <tbody>
+                    
+    <tr id="comment-741266" class="comment">
+        <td class="comment-actions"><table><tbody><tr>
+<td class="comment-score">
+<span title="number of &#39;great comment&#39; votes received" class="supernova">32</span>
+</td>
+<td>
+&nbsp;
+</td></tr>
+</tbody></table></td>
+        <td class="comment-text"><div><span class="comment-copy">IF IT IS IN ALL CAPS THE USER IS PROBABLY ANGRY</span> –&nbsp;<a href="http://stackoverflow.com/users/34211/andrew-hare" title="93126 reputation" class="comment-user">Andrew Hare</a> <span class="comment-date"><span title="2009-06-01 00:47:02Z">Jun 1 '09 at 0:47</span></span></div></td>
+    </tr>
+            
+    <tr id="comment-741272" class="comment">
+        <td class="comment-actions"><table><tbody><tr>
+<td class="comment-score">
+<span title="number of &#39;great comment&#39; votes received" class="cool">2</span>
+</td>
+<td>
+&nbsp;
+</td></tr>
+</tbody></table></td>
+        <td class="comment-text"><div><span class="comment-copy">maybe you can count the number of 4 letter words? ;)</span> –&nbsp;<a href="http://stackoverflow.com/users/24351/ali-shafai" title="1425 reputation" class="comment-user">Ali Shafai</a> <span class="comment-date"><span title="2009-06-01 00:50:54Z">Jun 1 '09 at 0:50</span></span></div></td>
+    </tr>
+            
+    <tr id="comment-741279" class="comment">
+        <td class="comment-actions"><table><tbody><tr>
+<td class="comment-score">
+<span title="number of &#39;great comment&#39; votes received" class="cool">2</span>
+</td>
+<td>
+&nbsp;
+</td></tr>
+</tbody></table></td>
+        <td class="comment-text"><div><span class="comment-copy">Microsoft tried with "Clippy"
+
+Someone seemed a little put off by it <a href="http://friends.kwim.net/node/54" rel="nofollow">friends.kwim.net/node/54</a></span> –&nbsp;<a href="http://stackoverflow.com/users/5008/brad-bruce" title="2333 reputation" class="comment-user">Brad Bruce</a> <span class="comment-date"><span title="2009-06-01 00:57:20Z">Jun 1 '09 at 0:57</span></span></div></td>
+    </tr>
+            
+    <tr id="comment-741288" class="comment">
+        <td class="comment-actions"><table><tbody><tr>
+<td class="comment-score">
+<span title="number of &#39;great comment&#39; votes received" class="cool">1</span>
+</td>
+<td>
+&nbsp;
+</td></tr>
+</tbody></table></td>
+        <td class="comment-text"><div><span class="comment-copy">Great question.  I've recently been doing some research into Statistical NLP and have not read anything about mood.  As soon as I read your question, I could see the benefit for systems (e.g. automated CRM). I think you may have just framed a dissertation for someone.</span> –&nbsp;<a href="http://stackoverflow.com/users/106877/adrian" title="410 reputation" class="comment-user">Adrian</a> <span class="comment-date"><span title="2009-06-01 01:02:26Z">Jun 1 '09 at 1:02</span></span></div></td>
+    </tr>
+            
+    <tr id="comment-753092" class="comment">
+        <td class="comment-actions"><table><tbody><tr>
+<td class="comment-score">
+<span title="number of &#39;great comment&#39; votes received" class="cool">1</span>
+</td>
+<td>
+&nbsp;
+</td></tr>
+</tbody></table></td>
+        <td class="comment-text"><div><span class="comment-copy">@Andrew Hare - I'm a very calm FORTRAN programmer :-)</span> –&nbsp;<a href="http://stackoverflow.com/users/62699/ldigas" title="8916 reputation" class="comment-user">ldigas</a> <span class="comment-date"><span title="2009-06-03 14:31:38Z">Jun 3 '09 at 14:31</span></span></div></td>
+    </tr>
+
+        </tbody>
+    
+        </table>
+    </div>
+    <a id="comments-link-933212" class="comments-link" title="expand to show all comments on this post">show <b>8</b> more comments</a>
+    
+    <div class="was-this-helpful" style="color: rgb(136, 136, 136); ">
+        feedback
+    </div>
+    
+</td>
+</tr>    </tbody></table>    
+</div>
+
+
+
+<div id="answers">
+
+    <a name="tab-top"></a>
+    <div id="answers-header">
+        <div class="subheader answers-subheader">
+            <h2>10 Answers</h2>
+            <div id="tabs">
+                <a href="http://stackoverflow.com/questions/933212/is-it-possible-to-guess-a-users-mood-based-on-the-structure-of-text?answertab=active#tab-top" title="Answers with the latest activity first">active</a>
+<a href="http://stackoverflow.com/questions/933212/is-it-possible-to-guess-a-users-mood-based-on-the-structure-of-text?answertab=oldest#tab-top" title="Answers in the order they were provided">oldest</a>
+<a class="youarehere" href="http://stackoverflow.com/questions/933212/is-it-possible-to-guess-a-users-mood-based-on-the-structure-of-text?answertab=votes#tab-top" title="Answers with the highest score first">votes</a>
+
+            </div>
+        </div>    
+    </div>    
+
+
+  
+    <a name="959162"></a>
+    <div id="answer-959162" class="answer">
+        <table>
+        <tbody><tr>
+        <td class="votecell">
+            
+<div class="vote">
+    <input type="hidden" value="959162">
+    <a class="vote-up-off" title="This answer is useful (click again to undo)">up vote</a>
+    <span class="vote-count-post">24</span>
+    <a class="vote-down-off" title="This answer is not useful (click again to undo)">down vote</a>
+<span class="vote-accepted-on" title="The question owner accepted this as the best answer Jun 6 &#39;09 at 15:22">accepted</span>
+</div>
+
+        </td>
+
+
+<td class="answercell">
+    <div class="post-text"><p>This is the basis of an area of natural language processing called <a href="http://en.wikipedia.org/wiki/Sentiment_analysis" rel="nofollow">sentiment analysis</a>. Although your question is general, it's certainly not stupid - this sort of research is done by Amazon on the text in product reviews for example.</p>
+
+<p>If you are serious about this, then a simple version could be achieved by -</p>
+
+<ol>
+<li><p><strong>Acquire a corpus of positive/negative sentiment</strong>. If this was a professional project you may take some time and manually annotate a corpus yourself, but if you were in a hurry or just wanted to experiment this at first then I'd suggest looking at the <a href="http://www.cs.cornell.edu/People/pabo/movie-review-data/" rel="nofollow">sentiment polarity corpus</a> from Bo Pang and Lillian Lee's research. The issue with using that corpus is it is not tailored to your domain (specifically, the corpus uses movie reviews), but it should still be applicable.</p></li>
+<li><p><strong>Split your dataset into sentences either Positive or Negative</strong>. For the sentiment polarity corpus you could split each review into it's composite sentences and then apply the overall sentiment polarity tag (positive or negative) to all of those sentences. Split this corpus into two parts - 90% should be for training, 10% should be for test. If you're using Weka then it can handle the splitting of the corpus for you.</p></li>
+<li><p><strong>Apply a machine learning algorithm</strong> (such as SVM, Naive Bayes, Maximum Entropy) to the training corpus at a word level. This model is called a <a href="http://en.wikipedia.org/wiki/Bag_of_words" rel="nofollow">bag of words model</a>, which is just representing the sentence as the words that it's composed of. This is the same model which many spam filters run on. For a nice introduction to machine learning algorithms there is an application called <a href="http://www.cs.waikato.ac.nz/ml/weka/" rel="nofollow">Weka</a> that implements a range of these algorithms and gives you a GUI to play with them. You can then test the performance of the machine learned model from the errors made when attempting to classify your test corpus with this model.</p></li>
+<li><p><strong>Apply this machine learning algorithm to your user posts</strong>. For each user post, separate the post into sentences and then classify them using your machine learned model.</p></li>
+</ol>
+
+<p>So yes, if you are serious about this then it is achievable - even without past experience in computational linguistics. It would be a fair amount of work, but even with word based models good results can be achieved. </p>
+
+<p>If you need more help feel free to contact me - I'm always happy to help others interested in NLP =]</p>
+
+<p></p><hr><p></p>
+
+<p><em>Small Notes</em> - </p>
+
+<ol>
+<li>Merely splitting a segment of text into sentences is a field of NLP - called <a href="http://en.wikipedia.org/wiki/Sentence_boundary_disambiguation" rel="nofollow">sentence boundary detection</a>. There are a number of tools, OSS or free, available to do this, but for your task a simple split on whitespaces and punctuation should be fine.</li>
+<li><a href="http://svmlight.joachims.org/" rel="nofollow">SVMlight</a> is also another machine learner to consider, and in fact their inductive SVM does a similar task to what we're looking at - trying to classify which Reuter articles are about "corporate acquisitions" with 1000 positive and 1000 negative examples.</li>
+<li>Turning the sentences into features to classify over may take some work. In this model each word is a feature - this requires tokenizing the sentence, which means separating words and punctuation from each other. Another tip is to lowercase all the separate word tokens so that "I HATE you" and "I hate YOU" both end up being considered the same. With more data you could try and also include whether capitalization helps in classifying whether someone is angry, but I believe words should be sufficient at least for an initial effort.</li>
+</ol>
+
+<p></p><hr><p></p>
+
+<p><strong>Edit</strong></p>
+
+<p>I just discovered LingPipe that in fact has a <a href="http://alias-i.com/lingpipe/demos/tutorial/sentiment/read-me.html" rel="nofollow">tutorial on sentiment analysis</a> using the Bo Pang and Lillian Lee Sentiment Polarity corpus I was talking about. If you use Java that may be an excellent tool to use, and even if not it goes through all of the steps I discussed above.</p>
+</div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+        <div class="post-menu"><a href="http://stackoverflow.com/a/959162" title="short permalink to this answer" id="link-post-959162">link</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/959162/edit">improve this answer</a></div>
+    </td>
+    <td align="right" class="post-signature">
+<div class="user-info"><div class="user-action-time">edited <a href="http://stackoverflow.com/posts/959162/revisions" title="show all edits to this post"><span title="2009-06-06 11:09:00Z" class="relativetime">Jun 6 '09 at 11:09</span></a></div><div class="user-gravatar32"></div><div class="user-details"><br></div></div>    </td>
+            
+
+    <td align="right" class="post-signature">   
+       
+
+    <div class="user-info"><div class="user-action-time">answered <span title="2009-06-06 07:12:51Z" class="relativetime">Jun 6 '09 at 7:12</span></div><div class="user-gravatar32"><a href="http://stackoverflow.com/users/76039/smerity"><div class=""><img src="./algorithm - Is it possible to guess a user's mood based on the structure of text  - Stack Overflow_files/312e0f70579e73ebf81cc00a574f00f8" alt=""></div></a></div><div class="user-details"><a href="http://stackoverflow.com/users/76039/smerity">Smerity</a><br><span class="reputation-score" title="reputation score">748</span><span title="2 silver badges"><span class="badge2"></span><span class="badgecount">2</span></span><span title="8 bronze badges"><span class="badge3"></span><span class="badgecount">8</span></span></div></div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>        </tr>
+
+
+<tr>
+<td class="votecell"></td>
+<td>
+    <div id="comments-959162" class="comments dno">
+        <table>
+        <tbody>
+        
+            <tr><td></td><td></td></tr>
+        
+        </tbody>
+    
+        </table>
+    </div>
+    
+    
+    <div class="was-this-helpful">
+        feedback
+    </div>
+    
+</td>
+</tr>    </tbody></table>
+</div>
+
+    <div class="everyonelovesstackoverflow" id="adzerk3"><a href="http://engine.adzerk.net/redirect/0/5922/7472/8277/922d3623e80140d0af39b4ef141c1391/44/1178/10187/634593827505519860?keywords=algorithm%2cnlp" rel="nofollow" target="_blank" title=""><img src="./algorithm - Is it possible to guess a user's mood based on the structure of text  - Stack Overflow_files/bee37138e0414d6f99d68ae55955c4fa.png" title="" alt="" border="0" height="90" width="728"></a></div>
+
+    
+  
+    <a name="933231"></a>
+    <div id="answer-933231" class="answer">
+        <table>
+        <tbody><tr>
+        <td class="votecell">
+            
+<div class="vote">
+    <input type="hidden" value="933231">
+    <a class="vote-up-off" title="This answer is useful (click again to undo)">up vote</a>
+    <span class="vote-count-post">9</span>
+    <a class="vote-down-off" title="This answer is not useful (click again to undo)">down vote</a>
+
+</div>
+
+        </td>
+
+
+<td class="answercell">
+    <div class="post-text"><p>No doubt it is possible to judge a user's mood based on the text they type but it would be no trivial thing. Things that I can think of:</p>
+
+<ul>
+<li>Capitals tends to signify agitation, annoyance or frustration and is certainly an emotional response but then again some newbies do that because they don't realize the significance so you couldn't assume that without looking at what else they've written (to make sure its not all in caps);</li>
+<li>Capitals are really just one form of emphasis. Others are use of certain aggressive colours (eg red) or use of bold or larger fonts;</li>
+<li>Some people make more spelling and grammar mistakes and typos when they're highly emotional;</li>
+<li>Scanning for emoticons could give you a very clear picture of what the user is feeling but again something like :) could be interpreted as happy, "I told you so" or even have a sarcastic meaning;</li>
+<li>Use of expletives tends to have a clear meaning but again its not clearcut. Colloquial speech by many people will routinely contain certain four letter words. For some other people, they might not even say "hell", saying "heck" instead so any expletive (even "sucks") is significant;</li>
+<li>Groups of punctuation marks (like @#$@$@) tend to be replaced for expletives in a context when expletives aren't necessarily appropriate, so thats less likely to be colloquial;</li>
+<li>Exclamation marks can indicate surprise, shock or exasperation.</li>
+</ul>
+
+<p>You might want to look at <a href="http://books.google.com.au/books?id=Vlb3BUpkF9kC&pg=PA138&lpg=PA138&dq=written%2Btext%2Bdetermining%2Bmood&source=bl&ots=n1UXjWfoD9&sig=kAKi%5FvcGGxHygCrYRcJR27287as&hl=en&ei=TiYjSpe9A4KG6APJg4XHAw&sa=X&oi=book%5Fresult&ct=result&resnum=7" rel="nofollow">Advances in written text analysis</a> or even <a href="http://ieeexplore.ieee.org/iel5/4427043/4427044/04427099.pdf?arnumber=4427099" rel="nofollow">Determining Mood for a Blog by Combining Multiple Sources of Evidence</a>.</p>
+
+<p>Lastly it's worth noting that written text is usually perceived to be more negative than it actually is. This is a common problem with email communication in companies, just as one example.</p>
+</div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+        <div class="post-menu"><a href="http://stackoverflow.com/a/933231" title="short permalink to this answer" id="link-post-933231">link</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/933231/edit">improve this answer</a></div>
+    </td>
+            
+
+    <td align="right" class="post-signature">   
+       
+
+    <div class="user-info user-hover"><div class="user-action-time">answered <span title="2009-06-01 00:56:02Z" class="relativetime">Jun 1 '09 at 0:56</span></div><div class="user-gravatar32"><a href="http://stackoverflow.com/users/18393/cletus"><div class=""><img src="./algorithm - Is it possible to guess a user's mood based on the structure of text  - Stack Overflow_files/2f364c2e36b52bc80296cbf23da8b231" alt=""></div></a></div><div class="user-details"><a href="http://stackoverflow.com/users/18393/cletus">cletus</a><br><span class="reputation-score" title="reputation score 153727">154k</span><span title="30 gold badges"><span class="badge1"></span><span class="badgecount">30</span></span><span title="295 silver badges"><span class="badge2"></span><span class="badgecount">295</span></span><span title="525 bronze badges"><span class="badge3"></span><span class="badgecount">525</span></span></div></div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>        </tr>
+
+
+<tr>
+<td class="votecell"></td>
+<td>
+    <div id="comments-933231" class="comments dno">
+        <table>
+        <tbody>
+        
+            <tr><td></td><td></td></tr>
+        
+        </tbody>
+    
+        </table>
+    </div>
+    
+    
+    <div class="was-this-helpful">
+        feedback
+    </div>
+    
+</td>
+</tr>    </tbody></table>
+</div>
+
+  
+    <a name="933224"></a>
+    <div id="answer-933224" class="answer">
+        <table>
+        <tbody><tr>
+        <td class="votecell">
+            
+<div class="vote">
+    <input type="hidden" value="933224">
+    <a class="vote-up-off" title="This answer is useful (click again to undo)">up vote</a>
+    <span class="vote-count-post">2</span>
+    <a class="vote-down-off" title="This answer is not useful (click again to undo)">down vote</a>
+
+</div>
+
+        </td>
+
+
+<td class="answercell">
+    <div class="post-text"><p>I can't believe I'm taking this seriously...  assuming a one-dimensional mood space:</p>
+
+<ul>
+<li>If the text contains a curse word,
+-10 mood.</li>
+<li>I think exclamations would <em>tend</em> to be negative, so -2 mood.</li>
+<li>When I get frustrated, I type in
+Very. Short. Sentences.  -5 mood.</li>
+</ul>
+
+<p>The more I think about this, the more it's clear that a lot of these signifiers indicate extreme mood in general, but it's not always clear what <em>kind</em> of mood.</p>
+</div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+        <div class="post-menu"><a href="http://stackoverflow.com/a/933224" title="short permalink to this answer" id="link-post-933224">link</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/933224/edit">improve this answer</a></div>
+    </td>
+            
+
+    <td align="right" class="post-signature">   
+       
+
+    <div class="user-info user-hover"><div class="user-action-time">answered <span title="2009-06-01 00:51:18Z" class="relativetime">Jun 1 '09 at 0:51</span></div><div class="user-gravatar32"><a href="http://stackoverflow.com/users/23897/michael-petrotta"><div class=""><img src="./algorithm - Is it possible to guess a user's mood based on the structure of text  - Stack Overflow_files/ec23f7cf0263a623bea6aca36a77a58b" alt=""></div></a></div><div class="user-details"><a href="http://stackoverflow.com/users/23897/michael-petrotta">Michael Petrotta</a><br><span class="reputation-score" title="reputation score 23884">23.9k</span><span title="5 gold badges"><span class="badge1"></span><span class="badgecount">5</span></span><span title="32 silver badges"><span class="badge2"></span><span class="badgecount">32</span></span><span title="69 bronze badges"><span class="badge3"></span><span class="badgecount">69</span></span></div></div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>        </tr>
+
+
+<tr>
+<td class="votecell"></td>
+<td>
+    <div id="comments-933224" class="comments">
+        <table>
+        <tbody>
+                    
+    <tr id="comment-741312" class="comment">
+        <td class="comment-actions"><table><tbody><tr>
+<td class="comment-score">
+<span title="number of &#39;great comment&#39; votes received" class="cool">2</span>
+</td>
+<td>
+&nbsp;
+</td></tr>
+</tbody></table></td>
+        <td class="comment-text"><div><span class="comment-copy">I curse when I'm happy :)</span> –&nbsp;<a href="http://stackoverflow.com/users/3415/brian-gianforcaro" title="6178 reputation" class="comment-user">Brian Gianforcaro</a> <span class="comment-date"><span title="2009-06-01 01:17:19Z">Jun 1 '09 at 1:17</span></span></div></td>
+    </tr>
+            
+    <tr id="comment-741328" class="comment">
+        <td class="comment-actions"><table><tbody><tr>
+<td class="comment-score">
+<span title="number of &#39;great comment&#39; votes received" class="cool">4</span>
+</td>
+<td>
+&nbsp;
+</td></tr>
+</tbody></table></td>
+        <td class="comment-text"><div><span class="comment-copy">If male, ! is -2.  If female, ! does nothing since girls tend to use ! as .</span> –&nbsp;<a href="http://stackoverflow.com/users/112377/rpflo" title="3004 reputation" class="comment-user">rpflo</a> <span class="comment-date"><span title="2009-06-01 01:23:52Z">Jun 1 '09 at 1:23</span></span></div></td>
+    </tr>
+            
+    <tr id="comment-768283" class="comment">
+        <td></td>
+        <td class="comment-text"><div><span class="comment-copy">How do you recognize if it was written by a female, then?</span> –&nbsp;<a href="http://stackoverflow.com/users/25676/j-s" title="733 reputation" class="comment-user">J S</a> <span class="comment-date"><span title="2009-06-06 11:12:26Z">Jun 6 '09 at 11:12</span></span></div></td>
+    </tr>
+            
+    <tr id="comment-1571185" class="comment">
+        <td class="comment-actions"><table><tbody><tr>
+<td class="comment-score">
+<span title="number of &#39;great comment&#39; votes received" class="cool">3</span>
+</td>
+<td>
+&nbsp;
+</td></tr>
+</tbody></table></td>
+        <td class="comment-text"><div><span class="comment-copy">@J S: Easy: you just ask another question on SO: "Is it possible to guess a user's gender based on the structure of text?"</span> –&nbsp;<a href="http://stackoverflow.com/users/147141/luvieere" title="11637 reputation" class="comment-user">luvieere</a> <span class="comment-date"><span title="2009-11-08 09:01:51Z">Nov 8 '09 at 9:01</span></span></div></td>
+    </tr>
+            
+    <tr id="comment-9467087" class="comment">
+        <td></td>
+        <td class="comment-text"><div><span class="comment-copy">Not at all. What if the comment was <i>"This job/song/film/restaurant is f***ing great!"</i> ? You've got to at least distinguish between &lt;curseword&gt; as noun,verb,adjective,adverb,exclamation etc. If you have &lt;curseword&gt; folowed by a <b>good</b> adjective or adverb, it's almost surely an intensifier (mind you the comment could be ironic or sarcastic). Other cases are more complicated.</span> –&nbsp;<a href="http://stackoverflow.com/users/202229/smci" title="1171 reputation" class="comment-user">smci</a> <span class="comment-date"><span title="2011-10-14 23:40:47Z">Oct 14 at 23:40</span></span><span class="edited-yes" title="this comment was edited 8 times"></span></div></td>
+    </tr>
+
+        </tbody>
+    
+        </table>
+    </div>
+    
+    
+    <div class="was-this-helpful">
+        feedback
+    </div>
+    
+</td>
+</tr>    </tbody></table>
+</div>
+
+  
+    <a name="933230"></a>
+    <div id="answer-933230" class="answer">
+        <table>
+        <tbody><tr>
+        <td class="votecell">
+            
+<div class="vote">
+    <input type="hidden" value="933230">
+    <a class="vote-up-off" title="This answer is useful (click again to undo)">up vote</a>
+    <span class="vote-count-post">1</span>
+    <a class="vote-down-off" title="This answer is not useful (click again to undo)">down vote</a>
+
+</div>
+
+        </td>
+
+
+<td class="answercell">
+    <div class="post-text"><p>Yes.</p>
+
+<p>Whether or not you can do it is another story. The problem seems at first to be AI complete.</p>
+
+<p>Now then, if you had keystroke timings you should be able to figure it out.</p>
+</div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+        <div class="post-menu"><a href="http://stackoverflow.com/a/933230" title="short permalink to this answer" id="link-post-933230">link</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/933230/edit">improve this answer</a></div>
+    </td>
+            
+
+    <td align="right" class="post-signature">   
+       
+
+    <div class="user-info"><div class="user-action-time">answered <span title="2009-06-01 00:54:40Z" class="relativetime">Jun 1 '09 at 0:54</span></div><div class="user-gravatar32"><a href="http://stackoverflow.com/users/14768/joshua"><div class=""><img src="./algorithm - Is it possible to guess a user's mood based on the structure of text  - Stack Overflow_files/f81685ba2a5040485725e7e078d157b6" alt=""></div></a></div><div class="user-details"><a href="http://stackoverflow.com/users/14768/joshua">Joshua</a><br><span class="reputation-score" title="reputation score">9,170</span><span title="2 gold badges"><span class="badge1"></span><span class="badgecount">2</span></span><span title="15 silver badges"><span class="badge2"></span><span class="badgecount">15</span></span><span title="33 bronze badges"><span class="badge3"></span><span class="badgecount">33</span></span></div></div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>        </tr>
+
+
+<tr>
+<td class="votecell"></td>
+<td>
+    <div id="comments-933230" class="comments">
+        <table>
+        <tbody>
+                    
+    <tr id="comment-741281" class="comment">
+        <td></td>
+        <td class="comment-text"><div><span class="comment-copy">Keystroke timings?  How, exactly?</span> –&nbsp;<a href="http://stackoverflow.com/users/23897/michael-petrotta" title="23884 reputation" class="comment-user">Michael Petrotta</a> <span class="comment-date"><span title="2009-06-01 00:58:34Z">Jun 1 '09 at 0:58</span></span></div></td>
+    </tr>
+            
+    <tr id="comment-741479" class="comment">
+        <td></td>
+        <td class="comment-text"><div><span class="comment-copy">You'll probably have to calibrate, but you should be able to infer mood from variations in keystroke timings within a few sentences. In particular, anger tends to vary between two extremes.</span> –&nbsp;<a href="http://stackoverflow.com/users/14768/joshua" title="9170 reputation" class="comment-user">Joshua</a> <span class="comment-date"><span title="2009-06-01 02:33:35Z">Jun 1 '09 at 2:33</span></span></div></td>
+    </tr>
+            
+    <tr id="comment-743750" class="comment">
+        <td></td>
+        <td class="comment-text"><div><span class="comment-copy">I have no idea what the "AI complete" bit is about, but the rest more or less covers my thoughts on the matter</span> –&nbsp;<a href="http://stackoverflow.com/users/1343/bcs" title="11347 reputation" class="comment-user">BCS</a> <span class="comment-date"><span title="2009-06-01 16:45:48Z">Jun 1 '09 at 16:45</span></span></div></td>
+    </tr>
+
+        </tbody>
+    
+        </table>
+    </div>
+    
+    
+    <div class="was-this-helpful">
+        feedback
+    </div>
+    
+</td>
+</tr>    </tbody></table>
+</div>
+
+  
+    <a name="933241"></a>
+    <div id="answer-933241" class="answer">
+        <table>
+        <tbody><tr>
+        <td class="votecell">
+            
+<div class="vote">
+    <input type="hidden" value="933241">
+    <a class="vote-up-off" title="This answer is useful (click again to undo)">up vote</a>
+    <span class="vote-count-post">1</span>
+    <a class="vote-down-off" title="This answer is not useful (click again to undo)">down vote</a>
+
+</div>
+
+        </td>
+
+
+<td class="answercell">
+    <div class="post-text"><p>Analysis of mood and behavior is very serious science.  Despite the other answers mocking the question law enforcement agencies have been investigating categorization of mood for years.  Uses in computers I have heard of generally had more context (timing information, voice pattern, speed in changing channels).  I think that you could--with some success--determine if a user is in a particular mood by training a Neural Network with samples from two known groups: angry and not angry.  Good luck with your efforts.</p>
+</div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+        <div class="post-menu"><a href="http://stackoverflow.com/a/933241" title="short permalink to this answer" id="link-post-933241">link</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/933241/edit">improve this answer</a></div>
+    </td>
+            
+
+    <td align="right" class="post-signature">   
+       
+
+    <div class="user-info"><div class="user-action-time">answered <span title="2009-06-01 01:04:39Z" class="relativetime">Jun 1 '09 at 1:04</span></div><div class="user-gravatar32"><a href="http://stackoverflow.com/users/66519/ojblass"><div class=""><img src="./algorithm - Is it possible to guess a user's mood based on the structure of text  - Stack Overflow_files/83ea6683f15edb2087f6a3ad4f42605b" alt=""></div></a></div><div class="user-details"><a href="http://stackoverflow.com/users/66519/ojblass">ojblass</a><br><span class="reputation-score" title="reputation score">4,413</span><span title="1 gold badge"><span class="badge1"></span><span class="badgecount">1</span></span><span title="15 silver badges"><span class="badge2"></span><span class="badgecount">15</span></span><span title="53 bronze badges"><span class="badge3"></span><span class="badgecount">53</span></span></div></div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>        </tr>
+
+
+<tr>
+<td class="votecell"></td>
+<td>
+    <div id="comments-933241" class="comments dno">
+        <table>
+        <tbody>
+        
+            <tr><td></td><td></td></tr>
+        
+        </tbody>
+    
+        </table>
+    </div>
+    
+    
+    <div class="was-this-helpful">
+        feedback
+    </div>
+    
+</td>
+</tr>    </tbody></table>
+</div>
+
+  
+    <a name="933237"></a>
+    <div id="answer-933237" class="answer">
+        <table>
+        <tbody><tr>
+        <td class="votecell">
+            
+<div class="vote">
+    <input type="hidden" value="933237">
+    <a class="vote-up-off" title="This answer is useful (click again to undo)">up vote</a>
+    <span class="vote-count-post">1</span>
+    <a class="vote-down-off" title="This answer is not useful (click again to undo)">down vote</a>
+
+</div>
+
+        </td>
+
+
+<td class="answercell">
+    <div class="post-text"><p>My memory isn't good on this subject, but I believe I saw some research about the grammar structure of the text and the overall tone. That could be also as simple as shorter words and emotion expression words (well, expletives are pretty obvious).</p>
+
+<p><strong>Edit</strong>: I noted that the first person to answer had substantially similar post. There could be indeed some serious idea about shorter sentences.</p>
+</div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+        <div class="post-menu"><a href="http://stackoverflow.com/a/933237" title="short permalink to this answer" id="link-post-933237">link</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/933237/edit">improve this answer</a></div>
+    </td>
+    <td align="right" class="post-signature">
+<div class="user-info"><div class="user-action-time">edited <a href="http://stackoverflow.com/posts/933237/revisions" title="show all edits to this post"><span title="2009-06-01 01:21:29Z" class="relativetime">Jun 1 '09 at 1:21</span></a></div><div class="user-gravatar32"></div><div class="user-details"><br></div></div>    </td>
+            
+
+    <td align="right" class="post-signature">   
+       
+
+    <div class="user-info user-hover"><div class="user-action-time">answered <span title="2009-06-01 01:01:13Z" class="relativetime">Jun 1 '09 at 1:01</span></div><div class="user-gravatar32"><a href="http://stackoverflow.com/users/115200/ilya-n"><div class=""><img src="./algorithm - Is it possible to guess a user's mood based on the structure of text  - Stack Overflow_files/2861bfeb71de9de58206bb6ae750bc2f" alt=""></div></a></div><div class="user-details"><a href="http://stackoverflow.com/users/115200/ilya-n">ilya n.</a><br><span class="reputation-score" title="reputation score">3,462</span><span title="9 silver badges"><span class="badge2"></span><span class="badgecount">9</span></span><span title="45 bronze badges"><span class="badge3"></span><span class="badgecount">45</span></span></div></div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>        </tr>
+
+
+<tr>
+<td class="votecell"></td>
+<td>
+    <div id="comments-933237" class="comments dno">
+        <table>
+        <tbody>
+        
+            <tr><td></td><td></td></tr>
+        
+        </tbody>
+    
+        </table>
+    </div>
+    
+    
+    <div class="was-this-helpful">
+        feedback
+    </div>
+    
+</td>
+</tr>    </tbody></table>
+</div>
+
+  
+    <a name="945067"></a>
+    <div id="answer-945067" class="answer">
+        <table>
+        <tbody><tr>
+        <td class="votecell">
+            
+<div class="vote">
+    <input type="hidden" value="945067">
+    <a class="vote-up-off" title="This answer is useful (click again to undo)">up vote</a>
+    <span class="vote-count-post">1</span>
+    <a class="vote-down-off" title="This answer is not useful (click again to undo)">down vote</a>
+
+</div>
+
+        </td>
+
+
+<td class="answercell">
+    <div class="post-text"><p>I think, my algorythm is rather straightforward, yet, why not calculating smilics through the text :) vs :(</p>
+
+<p>Obviously, the text ":) :) :) :)" resolves to a happy user, while ":( :( :(" will surely resolve to a sad one. Enjoy!</p>
+</div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+        <div class="post-menu"><a href="http://stackoverflow.com/a/945067" title="short permalink to this answer" id="link-post-945067">link</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/945067/edit">improve this answer</a></div>
+    </td>
+            
+
+    <td align="right" class="post-signature">   
+       
+
+    <div class="user-info"><div class="user-action-time">answered <span title="2009-06-03 14:24:41Z" class="relativetime">Jun 3 '09 at 14:24</span></div><div class="user-gravatar32"><span class="anonymous-gravatar"></span></div><div class="user-details">SadSido<br></div></div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>        </tr>
+
+
+<tr>
+<td class="votecell"></td>
+<td>
+    <div id="comments-945067" class="comments dno">
+        <table>
+        <tbody>
+        
+            <tr><td></td><td></td></tr>
+        
+        </tbody>
+    
+        </table>
+    </div>
+    
+    
+    <div class="was-this-helpful">
+        feedback
+    </div>
+    
+</td>
+</tr>    </tbody></table>
+</div>
+
+  
+    <a name="933381"></a>
+    <div id="answer-933381" class="answer">
+        <table>
+        <tbody><tr>
+        <td class="votecell">
+            
+<div class="vote">
+    <input type="hidden" value="933381">
+    <a class="vote-up-off" title="This answer is useful (click again to undo)">up vote</a>
+    <span class="vote-count-post">1</span>
+    <a class="vote-down-off" title="This answer is not useful (click again to undo)">down vote</a>
+
+</div>
+
+        </td>
+
+
+<td class="answercell">
+    <div class="post-text"><p>I agree with ojblass that this is a serious question.</p>
+
+<p>Mood categorization is currently a hot topic in the <em>speech</em> recognition area.  If you think about it, an interactive voice response (IVR) application needs to handle angry customers far differently than calm ones: angry people should be routed quickly to human operators with the right experience and training.  Vocal tone is a pretty reliable indicator of emotion, practical enough so that companies are eager to get this to work.  Google "speech emotion recognition", or read this <a href="http://www.speechtechmag.com/Articles/Editorial/Feature/Show-Some-Emotion-29458.aspx" rel="nofollow">article</a> to find out more.</p>
+
+<p>The situation should be no different in web-based GUIs.  Referring back to cletus's comments, the analogies between text and speech emotion detection are interesting.  If a person types CAPITALS they are said to be 'shouting', just as if his voice rose in volume and pitch using a voice interface.  Detecting typed profanities is analogous to "keyword spotting" of profanity in speech systems.  If a person is upset, they'll make more errors using either a GUI or a voice user interface (VUI) and can be routed to a human.</p>
+
+<p>There's a "multimodal" emotion detection research area here.  Imagine a web interface that you can also speak to (along the lines of the IBM/Motorola/Opera <a href="http://xml.coverpages.org/ni2004-03-23-b.html" rel="nofollow">XHTML + Voice Profile</a> prototype implementation).  Emotion detection could be based on a combination of cues from the speech and visual input modality.</p>
+</div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+        <div class="post-menu"><a href="http://stackoverflow.com/a/933381" title="short permalink to this answer" id="link-post-933381">link</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/933381/edit">improve this answer</a></div>
+    </td>
+    <td align="right" class="post-signature">
+<div class="user-info"><div class="user-action-time">edited <a href="http://stackoverflow.com/posts/933381/revisions" title="show all edits to this post"><span title="2009-08-24 05:33:43Z" class="relativetime">Aug 24 '09 at 5:33</span></a></div><div class="user-gravatar32"></div><div class="user-details"><br></div></div>    </td>
+            
+
+    <td align="right" class="post-signature">   
+       
+
+    <div class="user-info user-hover"><div class="user-action-time">answered <span title="2009-06-01 02:36:58Z" class="relativetime">Jun 1 '09 at 2:36</span></div><div class="user-gravatar32"><a href="http://stackoverflow.com/users/45935/jim-ferrans"><div class=""><img src="./algorithm - Is it possible to guess a user's mood based on the structure of text  - Stack Overflow_files/76eb040bed8dc544b5b71aeb2d1a81ad" alt=""></div></a></div><div class="user-details"><a href="http://stackoverflow.com/users/45935/jim-ferrans">Jim Ferrans</a><br><span class="reputation-score" title="reputation score">8,736</span><span title="1 gold badge"><span class="badge1"></span><span class="badgecount">1</span></span><span title="19 silver badges"><span class="badge2"></span><span class="badgecount">19</span></span><span title="34 bronze badges"><span class="badge3"></span><span class="badgecount">34</span></span></div></div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>        </tr>
+
+
+<tr>
+<td class="votecell"></td>
+<td>
+    <div id="comments-933381" class="comments dno">
+        <table>
+        <tbody>
+        
+            <tr><td></td><td></td></tr>
+        
+        </tbody>
+    
+        </table>
+    </div>
+    
+    
+    <div class="was-this-helpful">
+        feedback
+    </div>
+    
+</td>
+</tr>    </tbody></table>
+</div>
+
+  
+    <a name="1320648"></a>
+    <div id="answer-1320648" class="answer">
+        <table>
+        <tbody><tr>
+        <td class="votecell">
+            
+<div class="vote">
+    <input type="hidden" value="1320648">
+    <a class="vote-up-off" title="This answer is useful (click again to undo)">up vote</a>
+    <span class="vote-count-post">1</span>
+    <a class="vote-down-off" title="This answer is not useful (click again to undo)">down vote</a>
+
+</div>
+
+        </td>
+
+
+<td class="answercell">
+    <div class="post-text"><p>If you support fonts, bold red text is probably an angry user. Green regular sized texts with butterfly clip art a happy one.</p>
+</div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+        <div class="post-menu"><a href="http://stackoverflow.com/a/1320648" title="short permalink to this answer" id="link-post-1320648">link</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/1320648/edit">improve this answer</a></div>
+    </td>
+            
+
+    <td align="right" class="post-signature">   
+       
+
+    <div class="user-info"><div class="user-action-time">answered <span title="2009-08-24 05:46:10Z" class="relativetime">Aug 24 '09 at 5:46</span></div><div class="user-gravatar32"><a href="http://stackoverflow.com/users/114916/alex"><div class=""><img src="./algorithm - Is it possible to guess a user's mood based on the structure of text  - Stack Overflow_files/566bb1dcfcfe99bc2d3babc14a0417b5" alt=""></div></a></div><div class="user-details"><a href="http://stackoverflow.com/users/114916/alex">Alex</a><br><span class="reputation-score" title="reputation score">6,776</span><span title="3 gold badges"><span class="badge1"></span><span class="badgecount">3</span></span><span title="48 silver badges"><span class="badge2"></span><span class="badgecount">48</span></span><span title="133 bronze badges"><span class="badge3"></span><span class="badgecount">133</span></span></div></div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>        </tr>
+
+
+<tr>
+<td class="votecell"></td>
+<td>
+    <div id="comments-1320648" class="comments dno">
+        <table>
+        <tbody>
+        
+            <tr><td></td><td></td></tr>
+        
+        </tbody>
+    
+        </table>
+    </div>
+    
+    
+    <div class="was-this-helpful">
+        feedback
+    </div>
+    
+</td>
+</tr>    </tbody></table>
+</div>
+
+  
+    <a name="1773585"></a>
+    <div id="answer-1773585" class="answer">
+        <table>
+        <tbody><tr>
+        <td class="votecell">
+            
+<div class="vote">
+    <input type="hidden" value="1773585">
+    <a class="vote-up-off" title="This answer is useful (click again to undo)">up vote</a>
+    <span class="vote-count-post">0</span>
+    <a class="vote-down-off" title="This answer is not useful (click again to undo)">down vote</a>
+
+</div>
+
+        </td>
+
+
+<td class="answercell">
+    <div class="post-text"><p>Fuzzy logic will do I guess.
+Any way it will be quite easy to start with several rules of determining the user's mood and then extend and combine the "engine" with more accurate and sophisticated ones.</p>
+</div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+        <div class="post-menu"><a href="http://stackoverflow.com/a/1773585" title="short permalink to this answer" id="link-post-1773585">link</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/1773585/edit">improve this answer</a></div>
+    </td>
+            
+
+    <td align="right" class="post-signature">   
+       
+
+    <div class="user-info"><div class="user-action-time">answered <span title="2009-11-20 22:15:15Z" class="relativetime">Nov 20 '09 at 22:15</span></div><div class="user-gravatar32"><a href="http://stackoverflow.com/users/215846/bv"><div class=""><img src="./algorithm - Is it possible to guess a user's mood based on the structure of text  - Stack Overflow_files/2002bc81b2e9f91861bfee104810b22b" alt=""></div></a></div><div class="user-details"><a href="http://stackoverflow.com/users/215846/bv">bv.</a><br><span class="reputation-score" title="reputation score">11</span><span title="2 bronze badges"><span class="badge3"></span><span class="badgecount">2</span></span></div></div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>        </tr>
+
+
+<tr>
+<td class="votecell"></td>
+<td>
+    <div id="comments-1773585" class="comments dno">
+        <table>
+        <tbody>
+        
+            <tr><td></td><td></td></tr>
+        
+        </tbody>
+    
+        </table>
+    </div>
+    
+    
+    <div class="was-this-helpful">
+        feedback
+    </div>
+    
+</td>
+</tr>    </tbody></table>
+</div>
+    <a name="new-answer"></a>
+    <form id="post-form" action="http://stackoverflow.com/questions/933212/answer/submit" method="post" class="post-form">
+        <h2 class="space">Your Answer</h2>
+       
+
+<script type="text/javascript">
+    StackExchange.ready(function() {
+    
+        initTagRenderer("".split(" "), "".split(" "));
+
+              
+            prepareEditor({
+                
+                heartbeatType: 'answer',
+                bindNavPrevention: true,
+                postfix: "",
+                onDemand: true                ,immediatelyShowMarkdownHelp:true
+            });
+            
+    });  
+</script>
+
+
+<div id="post-editor" class="post-editor">  
+
+    
+    <div class="wmd-container">
+        <div id="wmd-button-bar" class="wmd-button-bar"><ul id="wmd-button-row" class="wmd-button-row"><li id="wmd-bold-button" class="wmd-button" style="left: 0px; "><span style="background-position: 0px -20px; "></span></li><li id="wmd-italic-button" class="wmd-button" style="left: 25px; "><span style="background-position: -20px -20px; "></span></li><li id="wmd-spacer1" class="wmd-spacer" style="left: 50px; "><span style="background-position: -40px -20px; "></span></li><li id="wmd-link-button" class="wmd-button" style="left: 75px; "><span style="background-position: -40px -20px; "></span></li><li id="wmd-quote-button" class="wmd-button" style="left: 100px; "><span style="background-position: -60px -20px; "></span></li><li id="wmd-code-button" class="wmd-button" style="left: 125px; "><span style="background-position: -80px -20px; "></span></li><li id="wmd-image-button" class="wmd-button" style="left: 150px; "><span style="background-position: -100px -20px; "></span></li><li id="wmd-spacer2" class="wmd-spacer" style="left: 175px; "><span style="background-position: -120px -20px; "></span></li><li id="wmd-olist-button" class="wmd-button" style="left: 200px; "><span style="background-position: -120px -20px; "></span></li><li id="wmd-ulist-button" class="wmd-button" style="left: 225px; "><span style="background-position: -140px -20px; "></span></li><li id="wmd-heading-button" class="wmd-button" style="left: 250px; "><span style="background-position: -160px -20px; "></span></li><li id="wmd-hr-button" class="wmd-button" style="left: 275px; "><span style="background-position: -180px -20px; "></span></li><li id="wmd-spacer3" class="wmd-spacer" style="left: 300px; "><span style="background-position: -200px -20px; "></span></li><li id="wmd-undo-button" class="wmd-button" style="left: 325px; "><span style="background-position: -200px -20px; "></span></li><li id="wmd-redo-button" class="wmd-button" style="left: 350px; "><span style="background-position: -220px -20px; "></span></li></ul></div>
+        <textarea id="wmd-input" class="wmd-input" name="post-text" cols="92" rows="15" tabindex="101"></textarea>
+    </div>
+
+    <div class="fl" style="margin-top: 8px; height:24px;">&nbsp;</div>
+    <div id="draft-saved" class="draft-saved community-option fl" style="margin-top: 8px; height:24px; display:none;">draft saved</div>
+
+
+
+    <div id="wmd-preview" class="wmd-preview"></div>
+    <div></div>
+    <div class="edit-block">
+        <input id="fkey" name="fkey" type="hidden" value="11d7a768b8da8f89b8f6b7af3f132045">
+        <input id="author" name="author" type="text">
+    </div>
+</div>   
+    <div class="form-item">
+        <table>
+        <tbody><tr>
+        <td class="vm open-id-login">
+            <a id="login-link" style="font-size: 200%; margin-left: 30px;" href="http://stackoverflow.com/users/login?returnurl=%2fquestions%2f933212%2fis-it-possible-to-guess-a-users-mood-based-on-the-structure-of-text">log in</a>
+            <script type="text/javascript">
+                StackExchange.ready(function () {
+                    StackExchange.helpers.onClickDraftSave('#login-link');
+                });
+            </script>
+        </td>
+
+    
+        <td class="orcell">
+            <div class="orword">or</div>
+            <div class="orline"></div>
+        </td>
+        <td class="vm">
+            <div>
+                <label for="display-name">Name</label>
+                <input id="display-name" name="display-name" type="text" size="30" maxlength="30" value="" tabindex="105">
+            </div>
+            <div>
+                <label for="m-address">Email</label>
+                <input id="m-address" name="m-address" type="text" size="40" maxlength="100" value="" tabindex="106">
+                <span class="edit-field-overlay">required, but never shown</span>
+            </div>
+            <div>
+                <label for="home-page">Home Page</label>
+                <input id="home-page" name="home-page" type="text" size="40" maxlength="200" value="" tabindex="107">
+            </div>
+        </td>
+    
+        </tr>
+        </tbody></table>
+    </div>
+               
+        <div class="form-submit cbt"><input id="submit-button" type="submit" value="Post Your Answer" tabindex="110"></div>
+    </form>
+
+
+        <h2 class="bottom-notice">
+                Not the answer you're looking for? 
+            Browse other questions tagged <a href="http://stackoverflow.com/questions/tagged/algorithm" class="post-tag" title="show questions tagged &#39;algorithm&#39;" rel="tag">algorithm</a> <a href="http://stackoverflow.com/questions/tagged/nlp" class="post-tag" title="show questions tagged &#39;nlp&#39;" rel="tag">nlp</a> 
+                or <a href="http://stackoverflow.com/questions/ask">ask your own question</a>.
+        </h2>
+</div>
+</div>
+<div id="sidebar">
+
+
+
+    <div class="module newuser newuser-greeting" style="">
+        <h4>Hello World!</h4>
+        <div>
+            <p></p><p>This is a collaboratively edited question and answer site for <b>professional and enthusiast programmers</b>. It's 100% free, no registration required.</p><p></p>
+            <p class="ar"><a href="http://stackoverflow.com/about">about »</a>&nbsp;&nbsp;&nbsp;<a href="http://stackoverflow.com/faq">faq »</a>
+            </p>
+        </div>
+    </div>
+    <div class="module">
+        <p class="label-key">tagged</p>
+        <div class="tagged"><a href="http://stackoverflow.com/questions/tagged/algorithm" class="post-tag" title="show questions tagged &#39;algorithm&#39;" rel="tag">algorithm</a>&nbsp;<span class="item-multiplier">×&nbsp;15555</span><br>
+<a href="http://stackoverflow.com/questions/tagged/nlp" class="post-tag" title="" rel="tag">nlp</a>&nbsp;<span class="item-multiplier">×&nbsp;1050</span><br>
+</div>
+        <table id="qinfo">
+            <tbody><tr>
+                <td><p class="label-key">asked</p></td>
+                <td style="padding-left:10px"><p class="label-key" title="2009-06-01 00:43:30Z"><b>2 years ago</b></p></td>
+            </tr>
+            <tr>
+                <td><p class="label-key">viewed</p></td>
+
+                <td style="padding-left:10px"><p class="label-key"><b>1,819 times</b></p></td>
+            </tr>
+            <tr>
+                <td><p class="label-key">active</p></td>
+                <td style="padding-left:10px"><p class="label-key"><b><a href="http://stackoverflow.com/questions/933212/is-it-possible-to-guess-a-users-mood-based-on-the-structure-of-text?lastactivity" class="lastactivity-link" title="2009-11-20 22:15:15Z">2 years ago</a></b></p></td>
+            </tr>
+        </tbody></table>
+    </div>
+    
+        <script type="text/javascript">
+            var scriptSrc = "http://engine2.adzerk.net/z/8277/adzerk1_2_4_43,adzerk2_2_17_45,adzerk3_2_4_44?keywords=algorithm,nlp";
+            if (document.referrer) {
+                if (/\?/.test(scriptSrc))
+                    scriptSrc += "&";
+                else
+                    scriptSrc += "?";
+                scriptSrc += "xReferrer=" + document.referrer;
+            }
+            var z = document.createElement("script"); z.type = "text/javascript"; z.async = true; z.src = scriptSrc; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(z, s);
+        </script>
+    
+    <div class="everyonelovesstackoverflow" id="adzerk2"><div id="SE20-ad-container" style="height: 250px; width: 220px;">
+<style>
+#launched-ad { width: 220px; height: 250px; overflow: hidden; background: url(http://cdn.sstatic.net/stackexchange/Img/launched-ads/security.png) no-repeat bottom center; }
+#launched-ad-link { display: block; width: 220px; height: 250px; line-height: 1.2; color: #d6f6f7; font-family: Georgia,"Times New Roman",serif; font-size: 20px; line-height: 26px; text-decoration: none; cursor: pointer; }
+#launched-ad-inner { width: 170px; margin: 25px 25px 0 25px;}
+</style>
+<a id="launched-ad-link" href="http://engine.adzerk.net/redirect/0/3194/2841/8277/e0c71772e52b4fa0ac400a0a8b6a7003/45/1178/11719/634593827505012200?keywords=algorithm%2cnlp&url=http%3A%2F%2Fsecurity.stackexchange.com%2Fquestions%2F9708%2Findex-page-has-been-compromised-suspicious-files-are-showing-up">
+    <div id="launched-ad">
+        <div id="launched-ad-inner">Index page has been compromised, suspicious files are showing up</div>
+    </div>
+</a>
+</div><script type="text/javascript">window._launchedAdUrl= "http://engine.adzerk.net/redirect/0/3194/2841/8277/e0c71772e52b4fa0ac400a0a8b6a7003/45/1178/11719/634593827505012200?keywords=algorithm%2cnlp";</script><script type="text/javascript" src="./algorithm - Is it possible to guess a user's mood based on the structure of text  - Stack Overflow_files/js"></script></div>
+
+    
+    <div>
+        <script type="text/javascript">
+            var careers_adurl="http://careers.stackoverflow.com/ad/js",careers_cssurl="http://cdn.sstatic.net/careers/ads/sidebar.min.css?33df70",careers_leaderboardcssurl="http://cdn.sstatic.net/careers/ads/ninja.min.css?33cf39",careers_companycssurl="http://cdn.sstatic.net/careers/ads/company";(function(){var b="min-height:220px;margin:15px 0",c=$("<div>").addClass("hireme").attr("style",b),a=$("<div>").html(c);document.write(a.html());$.ajax({url:"http://cdn.sstatic.net/careers/ads/adloader.min.js?33df70",dataType:"script",cache:true})})();
+        </script>
+    </div>
+
+      
+
+    <div class="module">
+    <h4 id="h-linked">Linked</h4>
+    <div class="linked">
+    <div class="spacer">
+<a href="http://stackoverflow.com/questions/996853/determining-mood-of-textual-phrases-through-lexical-analysis" class="question-hyperlink">Determining “Mood” of Textual Phrases through Lexical Analysis</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/1326171/algorithm-to-determine-how-positive-or-negative-a-statement-text-is" class="question-hyperlink">Algorithm to determine how positive or negative a statement/text is</a>
+</div>
+
+    </div>
+    </div>
+    <div class="module">
+    <h4 id="h-related">Related</h4>
+    <div class="related">
+    <div class="spacer">
+<a href="http://stackoverflow.com/questions/65487/how-do-you-categorize-based-on-text-content" class="question-hyperlink">How Do You Categorize Based On Text Content?</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/163923/methods-for-geotagging-or-geolabelling-text-content" class="question-hyperlink">Methods for Geotagging or Geolabelling Text Content</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/293000/algorithm-to-determine-how-positive-or-negative-a-statement-text-is" class="question-hyperlink">Algorithm to determine how positive or negative a statement/text is</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/695347/algorithm-to-classify-a-list-of-products" class="question-hyperlink">Algorithm to classify a list of products?</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/742711/shorten-a-text-and-only-keep-important-sentences" class="question-hyperlink">Shorten a text and only keep important sentences</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/843037/algorithm-for-analyzing-text-of-words" class="question-hyperlink">Algorithm for analyzing text of words</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/1163099/scope-ambiguity-in-natural-language" class="question-hyperlink">Scope ambiguity in natural language</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/1326171/algorithm-to-determine-how-positive-or-negative-a-statement-text-is" class="question-hyperlink">Algorithm to determine how positive or negative a statement/text is</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/1413219/natural-language-cfg-builder-algorithm" class="question-hyperlink">Natural Language CFG builder Algorithm</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/1490061/classifying-text-based-on-groups-of-keywords" class="question-hyperlink">Classifying Text Based on Groups of Keywords?</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/1643616/algorithms-to-detect-phrases-and-keywords-from-text" class="question-hyperlink">Algorithms to detect phrases and keywords from text</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/1840386/calculating-context-sensitive-text-correlation" class="question-hyperlink">Calculating context-sensitive text correlation</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/1994880/how-to-recognize-words-in-text-with-non-word-tokens" class="question-hyperlink">How to recognize words in text with non-word tokens?</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/2264806/how-to-automatically-determine-text-quality" class="question-hyperlink">How to automatically determine text quality?</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/3349759/splitting-a-domain-name-into-constituent-words-if-possible" class="question-hyperlink">Splitting a Domain name into constituent words (if possible)?</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/3779289/natural-language-processing-algorithm-for-mood-of-an-email" class="question-hyperlink">Natural Language Processing Algorithm for mood of an email</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/4535665/whats-the-best-way-to-generate-keywords-from-a-given-text" class="question-hyperlink">What's the best way to generate keywords from a given Text?</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/4673791/apostrophes-converted-to-correct-text" class="question-hyperlink">Apostrophes Converted to Correct Text?</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/4675785/how-can-i-analyze-pieces-of-text-for-positive-or-negative-words" class="question-hyperlink">How can I analyze pieces of text for positive or negative words?</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/6583160/are-there-published-generative-grammars-for-natural-languages" class="question-hyperlink">Are there published generative grammars for natural languages?</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/6870218/bucketing-sentences-by-mood" class="question-hyperlink">Bucketing sentences by mood</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/7310030/autocorrect-spelling-mistakes-in-text-input" class="question-hyperlink">Autocorrect spelling mistakes in text input</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/8102770/collocations-in-text-classification" class="question-hyperlink">Collocations in text classification</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/8103730/nlp-algorithms-for-determining-if-block-of-text-is-similar-to-other-after-al" class="question-hyperlink">NLP, algorithms for determining if block of text is “similar” to other (after already having matched for keyword)</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/8113816/anaphora-resolution-in-dialogue-based-system" class="question-hyperlink">Anaphora resolution in dialogue based system</a>
+</div>
+
+    </div>
+    </div>
+</div>
+
+<div id="feed-link">
+    <div id="feed-link-text"><a href="http://stackoverflow.com/feeds/question/933212" title="feed of this question and its answers"><span class="feed-icon"></span>question feed</a></div>
+</div>
+<script type="text/javascript" src="./algorithm - Is it possible to guess a user's mood based on the structure of text  - Stack Overflow_files/c22f"></script>
+<noscript>
+    &lt;div&gt;&lt;img src="/posts/933212/ivc/c22f" class="dno" alt=""&gt;&lt;/div&gt;
+</noscript>
+<div style="display:none" id="prettify-lang"></div>
+        </div>
+    </div>
+    <div id="footer">
+        <div class="footerwrap">
+            <div id="footer-menu">
+                <a href="http://stackoverflow.com/about">about</a> |
+                <a href="http://stackoverflow.com/faq">faq</a> |
+                
+                    <span onclick="if(window.localStorage){localStorage.setItem(&#39;blog-new&#39;,1323787709000); $(&#39;.new-blog-post&#39;).fadeOut();}">
+                        <script type="text/javascript">if(!window.localStorage || new Date(+localStorage.getItem('blog-new'))<new Date())document.write('<span title="Protect intellectual property &amp;#8211; but not like this, by Abby T. Miller - 23 hours ago" class="new-blog-post">new<\/span>');</script><span title="Protect intellectual property &amp;#8211; but not like this, by Abby T. Miller - 23 hours ago" class="new-blog-post">new</span>
+                        <a href="http://blog.stackexchange.com/">blog</a>
+                    </span> |
+                    <a href="http://chat.stackoverflow.com/">chat</a> |
+                <a href="http://data.stackexchange.com/">data</a> |
+                <a href="http://blog.stackoverflow.com/category/podcasts/">podcast</a> |
+                <a href="http://shop.stackexchange.com/">shop</a> |
+                <a href="http://stackexchange.com/legal">legal</a> |
+                <a href="http://engine.adzerk.net/redirect/0/2776/2751/0/4de3c60f719c4dfcb1a57531c7050090/0">advertising info</a> |
+
+                <a onclick="StackExchange.switchMobile(&#39;on&#39;, &#39;/questions/933212/is-it-possible-to-guess-a-users-mood-based-on-the-structure-of-text&#39;)">mobile</a> |
+
+                <b><a href="mailto:team@stackoverflow.com">contact us</a></b>
+                  | <b><a href="http://meta.stackoverflow.com/">feedback</a></b>
+                <div id="footer-sites">
+                    
+                        <span style="color:#FE7A15;font-size:140%">■</span>&nbsp;<a href="http://stackoverflow.com/">stackoverflow.com</a>&nbsp; 
+                        <span style="color:#FE7A15;font-size:140%">■</span>&nbsp;<a href="http://stackapps.com/">api/apps</a>&nbsp; 
+                        <span style="color:#FE7A15;font-size:140%">■</span>&nbsp;<a href="http://careers.stackoverflow.com/">careers</a>&nbsp; 
+                        <span style="color:#E8272C;font-size:140%">■</span>&nbsp;<a href="http://serverfault.com/">serverfault.com</a>&nbsp; 
+                        <span style="color:#00AFEF;font-size:140%">■</span>&nbsp;<a href="http://superuser.com/">superuser.com</a>&nbsp; 
+                        <span style="color:#969696;font-size:140%">■</span>&nbsp;<a href="http://meta.stackoverflow.com/">meta</a>&nbsp; 
+                        <span style="color:#46937D;font-size:140%">■</span>&nbsp;<a href="http://area51.stackexchange.com/">area&nbsp;51</a>&nbsp; 
+                        <span style="color:#C0D0DC;font-size:140%">■</span>&nbsp;<a href="http://webapps.stackexchange.com/">webapps</a>&nbsp; 
+                        <span style="color:#000000;font-size:140%">■</span>&nbsp;<a href="http://gaming.stackexchange.com/">gaming</a>&nbsp; 
+                        <span style="color:#dd4814;font-size:140%">■</span>&nbsp;<a href="http://askubuntu.com/">ubuntu</a>&nbsp; 
+                        <span style="color:#9ce4fe;font-size:140%">■</span>&nbsp;<a href="http://webmasters.stackexchange.com/">webmasters</a>&nbsp; 
+                        <span style="color:#cf4d3f;font-size:140%">■</span>&nbsp;<a href="http://cooking.stackexchange.com/">cooking</a>&nbsp; 
+                        <span style="color:#f4f28d;font-size:140%">■</span>&nbsp;<a href="http://gamedev.stackexchange.com/">game development</a>&nbsp; 
+                        <span style="color:#0f3559;font-size:140%">■</span>&nbsp;<a href="http://math.stackexchange.com/">math</a>&nbsp; 
+                        <span style="color:#f2f2f2;font-size:140%">■</span>&nbsp;<a href="http://photo.stackexchange.com/">photography</a>&nbsp; 
+                        <span style="color:#037187;font-size:140%">■</span>&nbsp;<a href="http://stats.stackexchange.com/">stats</a>&nbsp; 
+                        <span style="color:#f1e7cc;font-size:140%">■</span>&nbsp;<a href="http://tex.stackexchange.com/">tex</a>&nbsp; 
+                        <span style="color:#e1cdae;font-size:140%">■</span>&nbsp;<a href="http://english.stackexchange.com/">english</a>&nbsp; 
+                        <span style="color:#a2d9f6;font-size:140%">■</span>&nbsp;<a href="http://cstheory.stackexchange.com/">theoretical cs</a>&nbsp; 
+                        <span style="color:#1b3e6c;font-size:140%">■</span>&nbsp;<a href="http://programmers.stackexchange.com/">programmers</a>&nbsp; 
+                        <span style="color:#293a5d;font-size:140%">■</span>&nbsp;<a href="http://unix.stackexchange.com/">unix</a>&nbsp;
+                        <span style="color:#bec0cb;font-size:140%">■</span>&nbsp;<a href="http://apple.stackexchange.com/">apple</a>&nbsp;
+                        <span style="color:#939185;font-size:140%">■</span>&nbsp;<a href="http://wordpress.stackexchange.com/">wordpress</a>&nbsp;
+                        <span style="color:#b5cda4;font-size:140%">■</span>&nbsp;<a href="http://physics.stackexchange.com/">physics</a>&nbsp;
+                        <span style="color:#4176ab;font-size:140%">■</span>&nbsp;<a href="http://diy.stackexchange.com/">home&nbsp;improvement</a>&nbsp;
+                        <span style="color:#d1d8d7;font-size:140%">■</span>&nbsp;<a href="http://gis.stackexchange.com/">gis</a>&nbsp;
+                        <span style="color:#e5e2d3;font-size:140%">■</span>&nbsp;<a href="http://electronics.stackexchange.com/">electronics</a>&nbsp;
+                        <span style="color:#a4c639;font-size:140%">■</span>&nbsp;<a href="http://android.stackexchange.com/">android</a>&nbsp;
+                        <span style="color:#2e4e60;font-size:140%">■</span>&nbsp;<a href="http://security.stackexchange.com/">security</a>&nbsp;
+                        <span style="color:#45bcb5;font-size:140%">■</span>&nbsp;<a href="http://bicycles.stackexchange.com/">bicycles</a>&nbsp;
+                        <span style="color:#00adee;font-size:140%">■</span>&nbsp;<a href="http://dba.stackexchange.com/">dba</a>&nbsp;
+                        <span style="color:#2edaf0;font-size:140%">■</span>&nbsp;<a href="http://drupal.stackexchange.com/">drupal</a>&nbsp;
+                        <span style="color:#213951;font-size:140%">■</span>&nbsp;<a href="http://sharepoint.stackexchange.com/">sharepoint</a>&nbsp;
+                </div>
+            </div>
+            <div id="footer-flair">
+                <a class="peer1" href="http://www.peer1.com/stackoverflow"></a>  
+	            <a href="http://creativecommons.org/licenses/by-sa/3.0/" class="cc-wiki-link"></a>
+                <div id="svnrev">rev 2011.12.13.1</div>
+            </div>
+            <div id="copyright">
+                site design / logo © 2011 stack exchange inc; 
+                user contributions licensed under <a href="http://creativecommons.org/licenses/by-sa/3.0/" rel="license">cc-wiki</a> with <a href="http://blog.stackoverflow.com/2009/06/attribution-required/" rel="license">attribution required</a>
+            </div>
+            
+
+        </div>
+    <iframe id="global-auth-frame" style="display:none" src="about:blank"></iframe></div>
+    
+    <noscript>
+        &lt;div id="noscript-warning"&gt;Stack Overflow works best with JavaScript enabled&lt;img src="http://pixel.quantserve.com/pixel/p-c1rF4kxgLUzNc.gif" alt="" class="dno"&gt;&lt;/div&gt;
+    </noscript>
+    
+    <script type="text/javascript">var _gaq=_gaq||[];_gaq.push(['_setAccount','UA-5620270-1']);_gaq.push(['_trackPageview']);(function(){var ga=document.createElement('script');ga.type='text/javascript';ga.async=true;ga.src='http://www.google-analytics.com/ga.js';var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(ga,s);})();_qoptions={qacct:"p-c1rF4kxgLUzNc"};</script>
+    <script type="text/javascript" src="./algorithm - Is it possible to guess a user's mood based on the structure of text  - Stack Overflow_files/quant.js"></script>
+    
+
+
+</body></html>

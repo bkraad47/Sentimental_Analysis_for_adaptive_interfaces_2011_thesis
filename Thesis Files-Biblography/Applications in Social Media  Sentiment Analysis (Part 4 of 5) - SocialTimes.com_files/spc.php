@@ -1,0 +1,17 @@
+var OA_output = new Array(); 
+OA_output['129'] = '';
+OA_output['129'] += "<"+"a href=\'http://ox.mediabistro.com/i/ck.php?oaparams=2__bannerid=393__zoneid=129__cb=13460acab6__oadest=http%3A%2F%2Fpixel.everesttech.net%2F1661%2Fcq%3Fev_ct%3Dd%26ev_sid%3D58%26ev_ci%3D800030209%26ev_ai%3D800577050%26ev_cri%3D802490940%26url%3Dhttp%253A%2F%2Fnews.efrontier.com%2FWebinar-December2011_Registration.html\' target=\'_blank\'><"+"img src=\'http://oxs.mediabistro.com/4e16b52eb1fc7a9b686bb9ad54abd0b5.png\' width=\'125\' height=\'125\' alt=\'\' title=\'\' border=\'0\' /><"+"/a><"+"div id=\'beacon_13460acab6\' style=\'position: absolute; left: 0px; top: 0px; visibility: hidden;\'><"+"img src=\'http://ox.mediabistro.com/i/lg.php?bannerid=393&amp;campaignid=172&amp;zoneid=129&amp;loc=http%3A%2F%2Fsocialtimes.com%2Fsentiment-analysis-socialmedia-marketing3-2_b59924&amp;cb=13460acab6\' width=\'0\' height=\'0\' alt=\'\' style=\'width: 0px; height: 0px;\' /><"+"/div>\n";
+OA_output['130'] = '';
+OA_output['130'] += "<"+"a href=\'http://ox.mediabistro.com/i/ck.php?oaparams=2__bannerid=395__zoneid=130__cb=c9a001d35d__oadest=http%3A%2F%2Fwww.facebook.com%2Fdevcontest\' target=\'_blank\'><"+"img src=\'http://oxs.mediabistro.com/983579ad80cf536a1e12b6d4dfa17fb9.jpg\' width=\'125\' height=\'125\' alt=\'\' title=\'\' border=\'0\' /><"+"/a><"+"div id=\'beacon_c9a001d35d\' style=\'position: absolute; left: 0px; top: 0px; visibility: hidden;\'><"+"img src=\'http://ox.mediabistro.com/i/lg.php?bannerid=395&amp;campaignid=171&amp;zoneid=130&amp;loc=http%3A%2F%2Fsocialtimes.com%2Fsentiment-analysis-socialmedia-marketing3-2_b59924&amp;cb=c9a001d35d\' width=\'0\' height=\'0\' alt=\'\' style=\'width: 0px; height: 0px;\' /><"+"/div>\n";
+OA_output['131'] = '';
+OA_output['131'] += "<"+"a href=\'http://ox.mediabistro.com/i/ck.php?oaparams=2__bannerid=357__zoneid=131__cb=0a2a6fddc1__oadest=http%3A%2F%2Fwww.mediabistro.com%2Fsocialize%2F%3Fc%3Dsztstad125\' target=\'_blank\'><"+"img src=\'http://oxs.mediabistro.com/45a85da9bba93141d013f0893a5074f9.gif\' width=\'125\' height=\'125\' alt=\'\' title=\'\' border=\'0\' /><"+"/a><"+"div id=\'beacon_0a2a6fddc1\' style=\'position: absolute; left: 0px; top: 0px; visibility: hidden;\'><"+"img src=\'http://ox.mediabistro.com/i/lg.php?bannerid=357&amp;campaignid=15&amp;zoneid=131&amp;loc=http%3A%2F%2Fsocialtimes.com%2Fsentiment-analysis-socialmedia-marketing3-2_b59924&amp;cb=0a2a6fddc1\' width=\'0\' height=\'0\' alt=\'\' style=\'width: 0px; height: 0px;\' /><"+"/div>\n";
+OA_output['132'] = '';
+OA_output['132'] += "<"+"a href=\'http://ox.mediabistro.com/i/ck.php?oaparams=2__bannerid=386__zoneid=132__cb=9adfd21c3d__oadest=http%3A%2F%2Fwww.mediabistro.com%2Fsocialmediamarketingbootcamp%2F%3Fc%3Dbcsmst125ad\' target=\'_blank\'><"+"img src=\'http://oxs.mediabistro.com/7a0c0790efc087b57a2a24d5a5b9d1d7.gif\' width=\'125\' height=\'125\' alt=\'\' title=\'\' border=\'0\' /><"+"/a><"+"div id=\'beacon_9adfd21c3d\' style=\'position: absolute; left: 0px; top: 0px; visibility: hidden;\'><"+"img src=\'http://ox.mediabistro.com/i/lg.php?bannerid=386&amp;campaignid=15&amp;zoneid=132&amp;loc=http%3A%2F%2Fsocialtimes.com%2Fsentiment-analysis-socialmedia-marketing3-2_b59924&amp;cb=9adfd21c3d\' width=\'0\' height=\'0\' alt=\'\' style=\'width: 0px; height: 0px;\' /><"+"/div>\n";
+OA_output['133'] = '';
+
+OA_output['134'] = '';
+
+OA_output['135'] = '';
+
+OA_output['136'] = '';
+

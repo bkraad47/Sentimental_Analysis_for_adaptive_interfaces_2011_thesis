@@ -1,0 +1,29 @@
+{
+
+var google_ads = new Array();
+var google_ad;
+var google_radlinks = new Array();
+var google_radlink;
+var google_info = new Object();
+google_ad = new Object(); 
+google_ad.n = 1; 
+google_ad.type = "text"; 
+google_ad.bidtype = "CPC"; 
+google_ad.targeting_type = "contextual"; 
+google_ad.url = "http://googleads.g.doubleclick.net/aclk?sa=l&amp;ai=BbHh8c1_nTvXMLcmkiQeS9I3BB6mg0vkBmcvo0ibAjbcB0OgMEAEYASDSrZ0COABQu-S_tP______AWAzoAGv3K79A7IBDG1hc2hhYmxlLmNvbcgBAdoBMmh0dHA6Ly9tYXNoYWJsZS5jb20vMjAxMC8wNC8xOS9zZW50aW1lbnQtYW5hbHlzaXMvgAIByALnqc4KqAMB6APXAugDGegDswXoA9AC9QMCAAAE&amp;num=1&amp;sig=AOD64_2IkcDMMMNdxulY4Sjp4EbyQqMhKA&amp;client=ca-pub-9942038924324175&amp;adurl=http://code.he.net"; 
+google_ad.visible_url = "code.he.net"; 
+google_ad.line1 = "Free Programming Courses"; 
+google_ad.line2 = "Get started in minutes!"; 
+google_ad.line3 = "Become a Software Engineer"; 
+google_ad.regionname = ""; 
+google_ads[0] = google_ad; 
+google_info.feedback_url = "http://www.google.com/url?ct\x3dabg\x26q\x3dhttps://www.google.com/adsense/support/bin/request.py%3Fcontact%3Dabg_afc%26url%3Dhttp://mashable.com/2010/04/19/sentiment-analysis/%26hl%3Den%26client%3Dca-pub-9942038924324175%26adU%3Dcode.he.net%26adT%3DFree%2BProgramming%2BCourses%26gl%3DBD\x26usg\x3dAFQjCNHbgINUkSNtxLrNZoTMp3ILcbF_fA";
+var google_attribution_text = "AdChoices";
+var google_is_rtl = false;
+if (window.google_ad_request_done) {
+google_ad_request_done(google_ads);
+}
+if (window.google_radlink_request_done) {
+google_radlink_request_done(google_radlinks);
+}
+}

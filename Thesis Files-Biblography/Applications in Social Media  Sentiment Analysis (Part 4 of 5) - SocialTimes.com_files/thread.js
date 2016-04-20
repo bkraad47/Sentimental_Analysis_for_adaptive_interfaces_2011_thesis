@@ -1,0 +1,1 @@
+DISQUS.jsonData = { ready: false, lazy: true };

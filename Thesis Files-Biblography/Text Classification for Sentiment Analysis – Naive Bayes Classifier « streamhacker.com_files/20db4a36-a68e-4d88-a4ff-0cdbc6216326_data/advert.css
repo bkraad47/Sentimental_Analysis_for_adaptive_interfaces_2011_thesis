@@ -1,0 +1,52 @@
+.advert {
+    float: left;
+  margin: 1px 1px 1px 1px;
+  color: #0C756A;
+  background: #eee;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  padding: 1px 1px 1px 1px;
+  width:145px;
+  font-size: .9em;
+  border: 1px solid #777;
+}
+
+#adblock {
+  padding: 0px;
+  margin: 0px;
+}
+
+.advert ul {
+  list-style-type: none;
+  margin: 0px 0px 0px -25px;
+  padding: 0px 0px 0px 0px;
+}
+
+.advert a {
+    color: #000;
+    font-size: 1.1em;
+}
+
+.advert span {
+  color: #BC5B13;
+  font-size: 0.8em;
+}
+
+
+#powered_by {
+  margin: 1px 1px 1px 1px;
+  color: #BC5B13;
+  padding: 1px 1px 1px 1px;
+  width:150px;
+  font-size: .8em;
+  text-align: center;
+}
+
+.powered_by a {
+    color: #03463F;
+}
+
+body {
+  width: 100%;
+}

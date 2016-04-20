@@ -1,0 +1,36 @@
+<html>
+<script src="mood.js"></script>
+
+<script language="JavaScript">
+
+if(md==1){
+document.write("<img border="+0+" src="+"happy.jpg"+" width="+300+" height="+300+" /><body bgcolor="+"0000ff"+"><tr/><p>Happy option</p><p>Happy option</p><p>Happy option</p><tr/>");
+alert("I am an advert here to ruin your day!");
+}else if(md==2){
+document.write("<img border="+0+" src="+"amazed.jpg"+" width="+300+" height="+300+" /><body bgcolor="+"00ff00"+"><tr/><p>Funny option</p><p>Funny option</p><p>Funny option</p><tr/>");
+alert("I am an advert here to ruin your day!");
+}else if(md==3){
+document.write("<img border="+0+" src="+"sad.jpg"+" width="+300+" height="+300+" /><body bgcolor="+"00ffff"+"><tr/><p>Sad option</p><p>Sad option</p><tr/>");
+}else{
+document.write("<img border="+0+" src="+"angry.jpg"+" width="+300+" height="+300+" /><body bgcolor="+"ff0000"+"><tr/><p>Angry option</p><tr/>");
+}
+	setTimeout("location.reload(true);",18000);
+function testResults (form) {
+    var TestVar = form.mood.value;
+
+    var object = new ActiveXObject("Scripting.FileSystemObject");
+var file = object.CreateTextFile("c:\\Thsisproject\\Hello.txt", true);
+file.WriteLine(TestVar);
+file.Close();
+
+}
+   
+</script>
+<h1 style="color:orange">Welcome to Mood finder!!!!</h1>
+<p style="color:white">Type your status and well determine and react to your mood...................The software is currebtly designed to take texts of your statuses............</p>
+<form>
+Status: <input type="text" name="mood" />
+<INPUT TYPE="button" NAME="button" Value="submit" onClick="testResults(this.form)"/>
+</form>
+</body>
+</html>

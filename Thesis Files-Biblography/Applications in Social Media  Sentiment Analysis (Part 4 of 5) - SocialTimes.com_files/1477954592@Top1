@@ -1,0 +1,10 @@
+document.write ('<SCRIPT language=');
+document.write ("'");
+document.write ('JavaScript1.1');
+document.write ("'");
+document.write (' SRC="http://ad.doubleclick.net/adj/N3880.247realmedia.co.uk/B6016795.5;dcove=o;sz=728x90;click0=http://oasc05134.247realmedia.com/RealMedia/ads/click_lx.ads/BSTRsocialtimes/tech/lifestyle/media/L15/1142161618/Top1/BBN/BCN2011100442_004c_GM/gm_fleetplanworks_728.html/744f6f773745306e4b4d674141333067?;ord=1142161618?">\n');
+document.write ('</SCRIPT>\n');
+document.write ('<NOSCRIPT>\n');
+document.write ('<A HREF="http://oasc05134.247realmedia.com/RealMedia/ads/click_lx.ads/BSTRsocialtimes/tech/lifestyle/media/L15/1142161618/Top1/BBN/BCN2011100442_004c_GM/gm_fleetplanworks_728.html/744f6f773745306e4b4d674141333067?http://ad.doubleclick.net/jump/N3880.247realmedia.co.uk/B6016795.5;dcove=o;sz=728x90;ord=1142161618?">\n');
+document.write ('<IMG SRC="http://ad.doubleclick.net/ad/N3880.247realmedia.co.uk/B6016795.5;dcove=o;sz=728x90;ord=1142161618?" BORDER=0 WIDTH=728 HEIGHT=90 ALT="Advertisement"></A>\n');
+document.write ('</NOSCRIPT>');

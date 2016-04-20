@@ -1,0 +1,287 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0098)http://blog.typeslashcode.com/voxpop/2010/02/opinionfinder-open-source-sentiment-analysis-toolkit/ -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>OpinionFinder: Open Source Sentiment Analysis Toolkit «  VoxPop</title>
+<link href="./OpinionFinder  Open Source Sentiment Analysis Toolkit « VoxPop_files/reset.css" rel="stylesheet" type="text/css">
+<link href="./OpinionFinder  Open Source Sentiment Analysis Toolkit « VoxPop_files/style.css" rel="stylesheet" type="text/css">
+<link rel="pingback" href="http://blog.typeslashcode.com/voxpop/xmlrpc.php">
+
+</head>
+<body>
+<div id="header">
+	<div id="headerCont">
+		<div id="logo"><a href="http://blog.typeslashcode.com/voxpop/"><img src="./OpinionFinder  Open Source Sentiment Analysis Toolkit « VoxPop_files/logo.png" alt="VoxPop" width="125" height="40" border="0"></a></div>
+		<ul id="nav">
+			<li><a href="http://blog.typeslashcode.com/voxpop/">blog</a></li>
+				<li class="cat-item cat-item-3"><a href="http://blog.typeslashcode.com/voxpop/category/research/" title="View all posts filed under research">research</a>
+</li>
+	<li class="cat-item cat-item-4"><a href="http://blog.typeslashcode.com/voxpop/category/design/" title="View all posts filed under design">design</a>
+</li>
+	<li class="cat-item cat-item-5"><a href="http://blog.typeslashcode.com/voxpop/category/develop/" title="View all posts filed under develop">develop</a>
+</li>
+ 
+			<li>
+                <a href="http://blog.typeslashcode.com/voxpop/about/">about</a>
+	        </li>
+
+
+		</ul>
+	</div>
+</div>
+<div class="clear"></div>
+<div id="wrapper">
+	<div id="content">
+	
+	
+	
+				
+		<div class="post">
+			<h1><a href="./OpinionFinder  Open Source Sentiment Analysis Toolkit « VoxPop_files/OpinionFinder  Open Source Sentiment Analysis Toolkit « VoxPop.htm" rel="bookmark" title="Permanent Link to OpinionFinder: Open Source Sentiment Analysis Toolkit">OpinionFinder: Open Source Sentiment Analysis Toolkit</a></h1>
+			<h4>tags: <a href="http://blog.typeslashcode.com/voxpop/tag/nlp/" rel="tag">NLP</a> <a href="http://blog.typeslashcode.com/voxpop/tag/opinionfinder/" rel="tag">OpinionFinder</a> <a href="http://blog.typeslashcode.com/voxpop/tag/python/" rel="tag">python</a> <a href="http://blog.typeslashcode.com/voxpop/tag/sentiment-analysis/" rel="tag">sentiment analysis</a> <a href="http://blog.typeslashcode.com/voxpop/tag/wordnet/" rel="tag">WordNet</a><br></h4>
+			<h4>posted by <a href="http://blog.typeslashcode.com/voxpop/team/">Zeke Shore</a> on Feb 17th, 2010</h4>
+			
+			<p>While exploring existing sentiment analysis processes, we stumbled across what looks like a fully integrate open source solution to several issues identified in our <a href="http://blog.typeslashcode.com/voxpop/2010/02/new-sentiment-analysis-research/">recent round of research</a>.</p>
+<p><a href="http://www.cs.pitt.edu/mpqa/opinionfinderrelease/" target="_blank">OpinionFinder</a> appears to be hosted and primarily developed at the University of Pittsburgh with contributions from Cornell&nbsp;University&nbsp;and University of Utah. While the OpinionFinder system was only mentioned off hand in Bo Pang’s article <a href="http://www.cs.cornell.edu/home/llee/opinion-mining-sentiment-analysis-survey.html" target="_blank">Opinion Mining and Sentiment Analysis</a>, it appears to include some of the best solutions available for a lot of the common challenges that accompany effective sentiment analysis.</p>
+<p>OpinionFinder, which was&nbsp;initially&nbsp;released in 2006, employs a multi-stage NLP process. As stated in the project’s extended abstract,</p>
+<blockquote><p>“OpinionFinder aims to identify subjective sentences and to mark various aspects of subjectivity in these&nbsp;sentences, including the source (holder) of the subjectivity and words that are included in phrases expressing positive or negative sentiments.”</p></blockquote>
+<p>Working in “batch” mode as more of a back-end pipe, OpinionFinder works as follows:</p>
+<p><strong>Document Processing</strong></p>
+<p>Taking any incoming text source, HTML or XML meta info is removed, and&nbsp;sentences&nbsp;are split and POS tagged using <a href="http://sourceforge.net/projects/opennlp/" target="_blank">OpenNLP</a>. Next, <a href="http://en.wikipedia.org/wiki/Stemming" target="_blank">stemming</a> is accomplished using Steven Abney’s SCOL v1K stemmer program. SUNDANCE (Sentence UNDerstanding And Concept Extraction), a partial parser from the NLP laboratory at the University of Utah, is used by Autoslog-TS to identify extraction patterns needed by the sentence classifiers and the SourceFinder (which identifies the source of subjective content, distinguishing author statements from related or quoted statements). A final parse in batch mode establishes constituency parse trees which are converted to dependency parse trees for Named Entity and subject detection.</p>
+<p><strong>Subjectivity and Sentiment Analysis</strong></p>
+<p>At this point a <a href="http://en.wikipedia.org/wiki/Naive_Bayesian_classification" target="_blank">Naive Bayes</a> classifier identifies subjective sentences. The specs seem to indicate that the classifier is trained against subjective and objective sentences generated by two additional “rule-based” (unsupervised?) classifiers drawing from “a large corpus.” This point in the process will require some exploration and validation.</p>
+<p>Next a direct subjective expression and speech event classifier, built by <a href="http://faculty.rhodes.edu/brecke/" target="_blank">Eric Breck</a>, tags the direct subjective expressions and speech events found within the document using <a href="http://wordnet.princeton.edu/" target="_blank">WordNet</a>.</p>
+<p>The final step applies actual sentiment analysis to sentences that have been identified as subjective. This is accomplished with two classifiers that were developed using the <a href="http://www.cs.princeton.edu/~schapire/boostexter.html" target="_blank">BoosTexter</a> machine learning program and trained on the <a href="http://www.cs.pitt.edu/mpqa/" target="_blank">MPQA Corpus</a>.</p>
+<p><strong>Evaluation</strong></p>
+<p>While we still need to rigorously explore the source code, this system appears to be a gold mine of solutions to both previously unresolved and newly discovered issues in our sentiment analysis process. Named Entity detection along with dependency parse trees will help us filter content to only include sentiment regarding the actual topic being explored (rather than visualizing all subjective content in a comment) as well as helping to reveal popular related topics that exist within any given topic of discussion.</p>
+<p>Subjectivity detection and Speech Event Classification are challenges that are acknowledged in a lot of research on the topic of sentiment analysis, but comprehensive solutions have been much more difficult to come by. This system seems to combine a few processes towards those goals (including leveraging WordNet in a new way), and again could really help us filter down our corpus to relevant statements of sentiment for a given topic.</p>
+<p>Finally the actual positive/negative sentiment analysis that is applied to subjective sentences is different than any other process I have read about (most including WordNet and trained classifiers, or our original ad hoc method of matching against the General Inquirer Dictionary). We might  want to experiment a bit with this phase to see how more or less effective different methods are.</p>
+<p>One process that is surprisingly absent from the OpinionFinder system is any sort of <a href="http://blog.typeslashcode.com/voxpop/2010/02/negation-detection-processes/" target="_blank">negation detection</a>. We may want to explore possibly integrating the algorithm Bruno Ohana experimented with in his dissertation on sentiment analysis, or investigate other solutions.</p>
+<p>It also maybe be interesting to see how things change if we begin to stack some of the process used by OpinionFinder with systems that we already have in place, such as our <a href="http://blog.typeslashcode.com/voxpop/2009/11/emotive-analysis-process-v1-1/">GI Osgood Emotive Assignments</a>.</p>
+<p>You can download OpinionFinder for free from the <a href="http://www.cs.pitt.edu/mpqa/opinionfinderrelease/" target="_blank">project’s website</a> under an open <a href="http://www.cs.pitt.edu/mpqa/opinionfinderrelease/opinionfinder.LICENSE" target="_blank">academic license</a>, or download a PDF of the extended abstract/description of the project here:</p>
+<p><a class="pdf" href="http://blog.typeslashcode.com/voxpop/wp-content/uploads/2010/02/OpinionFinder-extendedabstract.pdf">OpinionFinder-Extended Abstract</a></p>
+			
+		</div>
+		
+<!-- You can start editing here. -->
+
+	<h3 id="comments">One Response to “OpinionFinder: Open Source Sentiment Analysis Toolkit”</h3>
+
+	<div class="navigation">
+		<div class="alignleft"></div>
+		<div class="alignright"></div>
+	</div>
+
+	<ol class="commentlist">
+			<li class="trackback even thread-even depth-1" id="comment-31">
+				<div id="div-comment-31" class="comment-body">
+				<div class="comment-author vcard">
+				<cite class="fn"><a href="http://www.ubervu.com/conversations/typeslashcode.com/voxpop/2010/02/opinionfinder-open-source-sentiment-analysis-toolkit/" rel="external nofollow" class="url">uberVU - social comments</a></cite> <span class="says">says:</span>		</div>
+
+		<div class="comment-meta commentmetadata"><a href="http://blog.typeslashcode.com/voxpop/2010/02/opinionfinder-open-source-sentiment-analysis-toolkit/comment-page-1/#comment-31">March 12, 2010 at 4:01 am</a></div>
+
+		<p><strong>Social comments and analytics for this post…</strong></p>
+<p>This post was mentioned on Twitter by darrenrush: OpinionFinder -an open source sentiment analysis &amp; natural language system (incl named entity extraction) <a href="http://bit.ly/dkyc1a..." rel="nofollow">http://bit.ly/dkyc1a…</a></p>
+
+		<div class="reply">
+				</div>
+				</div>
+		</li>
+	</ol>
+
+	<div class="navigation">
+		<div class="alignleft"></div>
+		<div class="alignright"></div>
+	</div>
+ 
+
+
+<div id="respond">
+
+<h3>Leave a Reply</h3>
+
+<div class="cancel-comment-reply">
+	<small><a rel="nofollow" id="cancel-comment-reply-link" href="http://blog.typeslashcode.com/voxpop/2010/02/opinionfinder-open-source-sentiment-analysis-toolkit/#respond" style="display:none;">Click here to cancel reply.</a></small>
+</div>
+
+
+<form action="http://blog.typeslashcode.com/voxpop/wp-comments-post.php" method="post" id="commentform">
+
+
+<p><input type="text" name="author" id="author" value="" size="22" tabindex="1" aria-required="true">
+<label for="author"><small>Name (required)</small></label></p>
+
+<p><input type="text" name="email" id="email" value="" size="22" tabindex="2" aria-required="true">
+<label for="email"><small>Mail (will not be published) (required)</small></label></p>
+
+<p><input type="text" name="url" id="url" value="" size="22" tabindex="3">
+<label for="url"><small>Website</small></label></p>
+
+
+<!--<p><small><strong>XHTML:</strong> You can use these tags: <code>&lt;a href=&quot;&quot; title=&quot;&quot;&gt; &lt;abbr title=&quot;&quot;&gt; &lt;acronym title=&quot;&quot;&gt; &lt;b&gt; &lt;blockquote cite=&quot;&quot;&gt; &lt;cite&gt; &lt;code&gt; &lt;del datetime=&quot;&quot;&gt; &lt;em&gt; &lt;i&gt; &lt;q cite=&quot;&quot;&gt; &lt;strike&gt; &lt;strong&gt; &lt;pre lang=&quot;&quot; line=&quot;&quot; escaped=&quot;&quot;&gt; </code></small></p>-->
+
+<p><textarea name="comment" id="comment" cols="69%" rows="10" tabindex="4"></textarea></p>
+
+<p><input name="submit" type="submit" id="submit" tabindex="5" value="Submit Comment">
+<input type="hidden" name="comment_post_ID" value="368" id="comment_post_ID">
+<input type="hidden" name="comment_parent" id="comment_parent" value="0">
+</p>
+
+</form>
+
+</div>
+
+		
+				
+		<div class="navigation">
+			<div class="alignleft"></div>
+			<div class="alignright"></div>
+		</div>
+		
+				
+	</div>
+	
+<ul id="sidebar">
+<li id="search-3" class="widget widget_search"><form role="search" method="get" id="searchform" action="http://blog.typeslashcode.com/voxpop/">
+	<div><label class="screen-reader-text" for="s">Search for:</label>
+	<input type="text" value="" name="s" id="s">
+	<input type="submit" id="searchsubmit" value="Search">
+	</div>
+	</form></li><li id="text-4" class="widget widget_text">			<div class="textwidget"><p>VoxPop is the BFA thesis project of <a href="http://andrewmahon.info/" target="_blank">Andrew Mahon</a> and <a href="http://zekeshore.com/" target="_blank">Zeke Shore</a> at <a href="http://parsons.edu/" target="_blank">Parsons School of Design</a>, aiming to explore reader sentiment within comments of New York Times articles</p></div>
+		</li><li id="text-3" class="widget widget_text">			<div class="textwidget"><div class="rss"><img src="./OpinionFinder  Open Source Sentiment Analysis Toolkit « VoxPop_files/rss.png" width="16" height="16" border="0" alt="rss"><a href="http://blog.typeslashcode.com/voxpop/wp-rss2.php">subscribe</a> </div>
+		<div class="clear"></div></div>
+		</li><li id="tag_cloud-3" class="widget widget_tag_cloud"><h2 class="widgettitle">Tags</h2><div><a href="http://blog.typeslashcode.com/voxpop/tag/api/" class="tag-link-20" title="1 topic" rel="tag" style="font-size: 8pt;">API</a>
+<a href="http://blog.typeslashcode.com/voxpop/tag/appengine/" class="tag-link-13" title="1 topic" rel="tag" style="font-size: 8pt;">appengine</a>
+<a href="http://blog.typeslashcode.com/voxpop/tag/bash/" class="tag-link-35" title="1 topic" rel="tag" style="font-size: 8pt;">bash</a>
+<a href="http://blog.typeslashcode.com/voxpop/tag/beanstalkd/" class="tag-link-29" title="3 topics" rel="tag" style="font-size: 11.5pt;">beanstalkd</a>
+<a href="http://blog.typeslashcode.com/voxpop/tag/canvas/" class="tag-link-16" title="1 topic" rel="tag" style="font-size: 8pt;">canvas</a>
+<a href="http://blog.typeslashcode.com/voxpop/tag/cd/" class="tag-link-39" title="1 topic" rel="tag" style="font-size: 8pt;">cd</a>
+<a href="http://blog.typeslashcode.com/voxpop/tag/color/" class="tag-link-41" title="4 topics" rel="tag" style="font-size: 13.25pt;">color</a>
+<a href="http://blog.typeslashcode.com/voxpop/tag/compile/" class="tag-link-33" title="1 topic" rel="tag" style="font-size: 8pt;">compile</a>
+<a href="http://blog.typeslashcode.com/voxpop/tag/couchdb/" class="tag-link-14" title="4 topics" rel="tag" style="font-size: 13.25pt;">couchdb</a>
+<a href="http://blog.typeslashcode.com/voxpop/tag/curl/" class="tag-link-38" title="1 topic" rel="tag" style="font-size: 8pt;">curl</a>
+<a href="http://blog.typeslashcode.com/voxpop/tag/daemon/" class="tag-link-31" title="1 topic" rel="tag" style="font-size: 8pt;">daemon</a>
+<a href="http://blog.typeslashcode.com/voxpop/tag/data/" class="tag-link-18" title="2 topics" rel="tag" style="font-size: 9.75pt;">data</a>
+<a href="http://blog.typeslashcode.com/voxpop/tag/distance/" class="tag-link-28" title="1 topic" rel="tag" style="font-size: 8pt;">distance</a>
+<a href="http://blog.typeslashcode.com/voxpop/tag/emotion/" class="tag-link-8" title="4 topics" rel="tag" style="font-size: 13.25pt;">emotion</a>
+<a href="http://blog.typeslashcode.com/voxpop/tag/form/" class="tag-link-42" title="1 topic" rel="tag" style="font-size: 8pt;">form</a>
+<a href="http://blog.typeslashcode.com/voxpop/tag/html5/" class="tag-link-15" title="1 topic" rel="tag" style="font-size: 8pt;">html5</a>
+<a href="http://blog.typeslashcode.com/voxpop/tag/info-graphics/" class="tag-link-65" title="2 topics" rel="tag" style="font-size: 9.75pt;">info graphics</a>
+<a href="http://blog.typeslashcode.com/voxpop/tag/information/" class="tag-link-23" title="2 topics" rel="tag" style="font-size: 9.75pt;">information</a>
+<a href="http://blog.typeslashcode.com/voxpop/tag/install/" class="tag-link-32" title="1 topic" rel="tag" style="font-size: 8pt;">install</a>
+<a href="http://blog.typeslashcode.com/voxpop/tag/installation/" class="tag-link-68" title="2 topics" rel="tag" style="font-size: 9.75pt;">installation</a>
+<a href="http://blog.typeslashcode.com/voxpop/tag/jonathan-harris/" class="tag-link-19" title="2 topics" rel="tag" style="font-size: 9.75pt;">jonathan harris</a>
+<a href="http://blog.typeslashcode.com/voxpop/tag/lasswell/" class="tag-link-21" title="4 topics" rel="tag" style="font-size: 13.25pt;">lasswell</a>
+<a href="http://blog.typeslashcode.com/voxpop/tag/linguistics/" class="tag-link-7" title="1 topic" rel="tag" style="font-size: 8pt;">linguistics</a>
+<a href="http://blog.typeslashcode.com/voxpop/tag/ls/" class="tag-link-36" title="1 topic" rel="tag" style="font-size: 8pt;">ls</a>
+<a href="http://blog.typeslashcode.com/voxpop/tag/memcached/" class="tag-link-49" title="2 topics" rel="tag" style="font-size: 9.75pt;">memcached</a>
+<a href="http://blog.typeslashcode.com/voxpop/tag/mkdir/" class="tag-link-40" title="1 topic" rel="tag" style="font-size: 8pt;">mkdir</a>
+<a href="http://blog.typeslashcode.com/voxpop/tag/nlp/" class="tag-link-6" title="8 topics" rel="tag" style="font-size: 20.25pt;">NLP</a>
+<a href="http://blog.typeslashcode.com/voxpop/tag/nltk/" class="tag-link-11" title="6 topics" rel="tag" style="font-size: 16.75pt;">nltk</a>
+<a href="http://blog.typeslashcode.com/voxpop/tag/nyt-api/" class="tag-link-22" title="7 topics" rel="tag" style="font-size: 18.5pt;">NYT API</a>
+<a href="http://blog.typeslashcode.com/voxpop/tag/osgood/" class="tag-link-26" title="3 topics" rel="tag" style="font-size: 11.5pt;">Osgood</a>
+<a href="http://blog.typeslashcode.com/voxpop/tag/parsons/" class="tag-link-69" title="2 topics" rel="tag" style="font-size: 9.75pt;">parsons</a>
+<a href="http://blog.typeslashcode.com/voxpop/tag/presentation/" class="tag-link-54" title="2 topics" rel="tag" style="font-size: 9.75pt;">presentation</a>
+<a href="http://blog.typeslashcode.com/voxpop/tag/process/" class="tag-link-48" title="5 topics" rel="tag" style="font-size: 15pt;">process</a>
+<a href="http://blog.typeslashcode.com/voxpop/tag/processing/" class="tag-link-24" title="1 topic" rel="tag" style="font-size: 8pt;">processing</a>
+<a href="http://blog.typeslashcode.com/voxpop/tag/prototype/" class="tag-link-47" title="2 topics" rel="tag" style="font-size: 9.75pt;">prototype</a>
+<a href="http://blog.typeslashcode.com/voxpop/tag/python/" class="tag-link-10" title="8 topics" rel="tag" style="font-size: 20.25pt;">python</a>
+<a href="http://blog.typeslashcode.com/voxpop/tag/queue/" class="tag-link-30" title="1 topic" rel="tag" style="font-size: 8pt;">queue</a>
+<a href="http://blog.typeslashcode.com/voxpop/tag/sentiment-analysis/" class="tag-link-60" title="4 topics" rel="tag" style="font-size: 13.25pt;">sentiment analysis</a>
+<a href="http://blog.typeslashcode.com/voxpop/tag/synset/" class="tag-link-27" title="1 topic" rel="tag" style="font-size: 8pt;">synset</a>
+<a href="http://blog.typeslashcode.com/voxpop/tag/tar/" class="tag-link-37" title="1 topic" rel="tag" style="font-size: 8pt;">tar</a>
+<a href="http://blog.typeslashcode.com/voxpop/tag/terminal/" class="tag-link-34" title="1 topic" rel="tag" style="font-size: 8pt;">terminal</a>
+<a href="http://blog.typeslashcode.com/voxpop/tag/thesis/" class="tag-link-55" title="3 topics" rel="tag" style="font-size: 11.5pt;">thesis</a>
+<a href="http://blog.typeslashcode.com/voxpop/tag/visualization/" class="tag-link-17" title="9 topics" rel="tag" style="font-size: 22pt;">visualization</a>
+<a href="http://blog.typeslashcode.com/voxpop/tag/web-py/" class="tag-link-12" title="1 topic" rel="tag" style="font-size: 8pt;">web.py</a>
+<a href="http://blog.typeslashcode.com/voxpop/tag/wordnet/" class="tag-link-25" title="6 topics" rel="tag" style="font-size: 16.75pt;">WordNet</a></div>
+</li><li id="linkcat-2" class="widget widget_links"><h2 class="widgettitle">Blogroll</h2>
+	<ul class="xoxo blogroll">
+<li><a href="http://datavisualization.ch/" target="_blank">Datavisualization.ch</a></li>
+<li><a href="http://infosthetics.com/" target="_blank">Information Aesthetics</a></li>
+<li><a href="http://www.informationisbeautiful.net/" target="_blank">Information Is Beautiful</a></li>
+<li><a href="http://www.visualcomplexity.com/vc/" target="_blank">Visual Complexity</a></li>
+
+	</ul>
+</li>
+<li id="linkcat-9" class="widget widget_links"><h2 class="widgettitle">Resources</h2>
+	<ul class="xoxo blogroll">
+<li><a href="http://www.benfry.com/" target="_blank">Ben Fry</a></li>
+<li><a href="http://labs.digg.com/" target="_blank">Digg Labs</a></li>
+<li><a href="http://blog.blprnt.com/" target="_blank">Jer Thorp | blprnt</a></li>
+<li><a href="http://www.number27.org/" target="_blank">Jonathan Harris</a></li>
+<li><a href="http://www.nltk.org/">Natural Language ToolKit</a></li>
+<li><a href="http://developer.nytimes.com/gallery" target="_blank">NYT API Gallery</a></li>
+<li><a href="http://code.google.com/p/voxpoptc/" target="_blank">VoxPop on Google Code</a></li>
+
+	</ul>
+</li>
+<li id="linkcat-67" class="widget widget_links"><h2 class="widgettitle">Team</h2>
+	<ul class="xoxo blogroll">
+<li><a href="http://andrewmahon.info/" target="_blank">Andrew Mahon</a></li>
+<li><a href="http://zekeshore.com/" target="_blank">Zeke Shore</a></li>
+
+	</ul>
+</li>
+</ul>
+</div>
+
+
+<div class="clear"></div>
+<div id="footer">
+	<div id="footerContent">
+		<div id="cc">
+			<div class="rss"> <img src="./OpinionFinder  Open Source Sentiment Analysis Toolkit « VoxPop_files/rss.png" width="16" height="16" alt="rss"><a href="http://blog.typeslashcode.com/voxpop/wp-rss2.php">subscribe</a> </div>
+			<div class="clear"></div>
+			<h4>Copyright 2009</h4>
+			<h4><a href="http://zekeshore.com/">Zeke Shore</a> + <a href="http://andrewmahon.info/">Andrew Mahon</a></h4>
+			<h4>Creative Commons License</h4>
+			<img src="./OpinionFinder  Open Source Sentiment Analysis Toolkit « VoxPop_files/cc.png" width="66" height="16" alt="cc"></div>
+		<ul class="footList">
+			<li class="footTitle">Sitemap</li>
+			<li><a href="http://blog.typeslashcode.com/voxpop/">blog</a></li>
+				<li class="cat-item cat-item-3"><a href="http://blog.typeslashcode.com/voxpop/category/research/" title="View all posts filed under research">research</a>
+</li>
+	<li class="cat-item cat-item-4"><a href="http://blog.typeslashcode.com/voxpop/category/design/" title="View all posts filed under design">design</a>
+</li>
+	<li class="cat-item cat-item-5"><a href="http://blog.typeslashcode.com/voxpop/category/develop/" title="View all posts filed under develop">develop</a>
+</li>
+ 
+			<li><a href="http://blog.typeslashcode.com/voxpop/about">about</a></li>
+		</ul>
+		<ul class="footList">
+			
+
+			<li class="footTitle">Recent Posts</li>
+						<li><a href="http://blog.typeslashcode.com/voxpop/2010/06/voxpop-at-the-parsons-thesis-exhibition/" rel="bookmark" title="Permanent Link to VoxPop at the Parsons Thesis Exhibition">VoxPop at the Parsons Thesis Exhibition</a></li>
+						<li><a href="http://blog.typeslashcode.com/voxpop/2010/03/thesis-show-installation-proposal/" rel="bookmark" title="Permanent Link to Thesis Show Installation Proposal">Thesis Show Installation Proposal</a></li>
+						<li><a href="http://blog.typeslashcode.com/voxpop/2010/03/new-york-times-innovation-portfolio/" rel="bookmark" title="Permanent Link to New York Times Innovation Portfolio">New York Times Innovation Portfolio</a></li>
+						<li><a href="http://blog.typeslashcode.com/voxpop/2010/03/visualizing-nyt-discourse-design-iteration-3/" rel="bookmark" title="Permanent Link to Visualizing NYT Discourse – Design Iteration 3">�Visualizing NYT D���</a></li>
+						<li><a href="http://blog.typeslashcode.com/voxpop/2010/03/midterm-slide-deck/" rel="bookmark" title="Permanent Link to Midterm Slide Deck">Midterm Slide Deck</a></li>
+						
+			
+		</ul>
+		<ul class="footListEnd">
+			<li class="footTitle">Recent Comments</li>
+				<li><a href="http://blog.typeslashcode.com/voxpop/2010/03/visualizing-nyt-discourse-design-iteration-3/#comment-56" title="Visualizing NYT Discourse – Design Iteration 3, March 1, 2010">Hi There! I ran into your site absolutely...</a></li>
+	<li><a href="http://blog.typeslashcode.com/voxpop/2009/11/validating-general-inquirer-dictionar/#comment-47" title="Validating the General Inquirer Dictionary, November 15, 2009">Thanks a lot for this info. <img src="./OpinionFinder  Open Source Sentiment Analysis Toolkit « VoxPop_files/icon_smile.gif" alt=":)" class="wp-smiley"> </a></li>
+	<li><a href="http://blog.typeslashcode.com/voxpop/2009/11/emotive-analysis-process-v1-1/#comment-40" title="Emotive Analysis Process V1.1, November 11, 2009">Completely understand what your stance in...</a></li>
+	<li><a href="http://blog.typeslashcode.com/voxpop/2009/11/validating-general-inquirer-dictionar/#comment-38" title="Validating the General Inquirer Dictionary, November 15, 2009">This was refreshing. I wished I could...</a></li>
+	<li><a href="http://blog.typeslashcode.com/voxpop/2010/03/new-york-times-innovation-portfolio/#comment-28" title="New York Times Innovation Portfolio, March 2, 2010">nice portfolio, someone should hire these...</a></li>
+		</ul>
+	</div>
+</div>
+
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script><script src="./OpinionFinder  Open Source Sentiment Analysis Toolkit « VoxPop_files/ga.js" type="text/javascript"></script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-11043542-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+
+
+</body></html>

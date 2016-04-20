@@ -1,0 +1,51 @@
+#wrapper {
+margin: 0px auto;
+padding: 0;
+width: 726px;
+text-align: center;
+}
+
+#contentwrapper {
+float: left;
+width: 100%;
+}
+
+#contentcolumn {
+margin: 0 190px 0 156px; /*Margins for content column. Should be "0 RightColumnWidth 0 LeftColumnWidth*/
+padding-top:25px;
+}
+
+#contentcolumn2{
+margin-left: 156px; /*Set left margin to LeftColumnWidth*/
+padding-top:25px;
+}
+#leftcolumn {
+float: left;
+width: 156px; /*Width of left column in pixel*/
+margin-left: -726px; /*Set margin to that of -(MainContainerWidth)*/
+text-align: left;
+margin-top:15px;
+}
+
+#rightcolumn {
+float: left;
+width: 190px; /*Width of right column*/
+margin-left: -190px; /*Set left margin to -(RightColumnWidth)*/
+padding-top:45px;
+}
+
+#footerWrapper {
+clear: left;
+width: 100%;
+text-align: center;
+padding: 0px;
+}
+
+.innertube {
+margin: 15px; /*Margins for inner DIV inside each column (to provide padding)*/
+margin-top: 0;
+}
+.innertube2 {
+margin: 15px 25px 15px 15px; /*Margins for inner DIV inside each column (to provide padding)*/
+margin-top: 0;
+}
